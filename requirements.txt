@@ -1,0 +1,7 @@
+-i https://pypi.org/simple
+asgiref
+django
+pillow
+sqlparse
+django-ckeditor
+django-debug-toolbar
