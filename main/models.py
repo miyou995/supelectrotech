@@ -17,10 +17,10 @@ CATEGORY_CHOICES=[
 class Produit(models.Model):
 
     # ordre       = models.IntegerField(blank=True, null=True)
-    name        = models.CharField( max_length=50)
+    designation = models.CharField( max_length=50, verbose_name=("Désignation"))
     slug        = models.SlugField( max_length=70)
     category    = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
-    sous_titre  = models.CharField(max_length=100, verbose_name=("Sous titre"), blank= True)
+    reference  = models.CharField(max_length=100, verbose_name=("Référence"), blank= True)
     description = RichTextField(verbose_name='Text en plus', blank= True, null=True)
     info_sup    = RichTextField(verbose_name='informations suplaimentaires', blank= True, null=True)
     photo       = models.ImageField(verbose_name='Photo du produit', upload_to='produits/')
@@ -31,7 +31,7 @@ class Produit(models.Model):
     fichier_4   = models.FileField(verbose_name='fichier 4', upload_to='fichiers/', blank= True)
 
     def __str__(self):
-        return self.name
+        return self.designation
 
     class Meta:
         verbose_name = 'Produits'

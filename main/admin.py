@@ -7,12 +7,13 @@ admin.site.enable_nav_sidebar = False
 
 
 class ProduitAdmin(admin.ModelAdmin):
-    list_display = ('id','name')
-    prepopulated_fields = {"slug": ("name",)}
-    list_display_links = ('id','name',)
+    list_display = ('id','designation', 'reference', 'category')
+    prepopulated_fields = {"slug": ("designation",)}
+    list_display_links = ('id','designation',)
     list_per_page = 40
-    list_filter = ('name',)
-    search_fields = ('id', 'name',)
+    list_filter = ('category',)
+    search_fields = ('id', 'designation','reference')
+
 
 admin.site.register(Produit, ProduitAdmin)
 

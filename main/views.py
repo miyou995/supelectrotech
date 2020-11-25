@@ -4,7 +4,7 @@ from django.core.mail import send_mail, EmailMessage
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .forms import ContactForm
-from .models import ContactForm
+from .models import ContactForm, CATEGORY_CHOICES, Produit, Slide, Post
 # Create your views here.
 
 class Home(TemplateView):
@@ -115,18 +115,36 @@ class ContactFormView(CreateView):
 
 
 
-# class BlogView(TemplateView):
-#     template_name = "blog.html"
+class PortfolioView(ListView):
+    model = Produit
+    template_name = "portfolio_details.html"
 
 
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['posts'] = Post.objects.all()
-#         context["partenaires"] = Partenaire.objects.all() 
-#         context["cat_sol"] = Categories_Solution.objects.all()
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['posts'] = Post.objects.all()
+    #     context["partenaires"] = Partenaire.objects.all() 
+    #     context["cat_sol"] = Categories_Solution.objects.all()
 
-#         return context
+    #     return context
 
 # class PostDetail(DetailView):
 #     model = Post
 #     template_name='blog-detail.html'
+
+
+class ProductView(TemplateView):
+    template_name = "produits.html"
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Produit, slug=self.kwargs['slug'])
+        return self.category
+    
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cat"] = CATEGORY_CHOICES 
+        context["products"] = Produit.objects.filter(category=self.category)
+        
+        return context
+    
