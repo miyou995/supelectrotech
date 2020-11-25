@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>About Us</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+<section class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="side-bar-product d-block">
+                <h2>Catégories</h2>
+                <ul>
+                    {% for x , y  in cat %}
+                        <li><a href="#{{y}}">{{y}}</a></li>
+                    {% endfor %}
+                
+                </ul>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="main-produict">
+                {% for x , y  in cat %}
+                    <div id="{{y}}">
+                        <div class="py-5">
+                            <h3 class="font-weight-bold mb-0">{{y}}</h3>
+                            <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <div class="row">
+                                {% for prod in products %}
+                                    <div class="col-6 col-md-4 mb-3">
+                                        <a href="#">
+
+                                            <div class="hover hover-3 text-white rounded"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570786274/hoverSet-5_ifnajv.jpg" alt="">
+                                                <div class="hover-overlay"></div>
+                                                <div class="hover-3-content px-5 py-4">
+                                                    <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
+                                                    <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div> 
+                    </div>
+                {% endfor %}
+        
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+</section>
+
+
+{% endblock content %}
