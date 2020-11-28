@@ -36,8 +36,6 @@ class CatalogueListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context["produits"] = Produit2.objects.all()
-        # context["cat_sol"] = Categories_Solution.objects.all()
 
         return context
 
@@ -52,15 +50,6 @@ class SolutionView(TemplateView):
     
 
 
-# class SolutionDetail(DetailView):
-#     model = Categories_Solution
-#     template_name='solution-detail.html'
-#     context_object_name = 'solution'
-    
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context["cat_sol"] = Categories_Solution.objects.all()
-#         return context
 
 class ContactView(TemplateView):
     template_name = "contact.html"
@@ -95,23 +84,6 @@ class ContactFormView(CreateView):
 
 
     
-# class GammeDetailList(ListView):
-#     model = ProduitDetail
-#     template_name = 'gamme_detail.html'
-#     context_object_name = 'produit'
-
-#     def get_queryset(self):
-#         self.gamme = get_object_or_404(Produit2, slug=self.kwargs['slug'])
-#         return self.gamme
-
-
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['gamme'] = ProduitDetail.objects.filter(gamme=self.gamme)
-#         context["partenaires"] = Partenaire.objects.all() 
-#         context["cat_sol"] = Categories_Solution.objects.all()
-
-#         return context
 
 
 
@@ -120,31 +92,18 @@ class PortfolioView(ListView):
     template_name = "portfolio_details.html"
 
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['posts'] = Post.objects.all()
-    #     context["partenaires"] = Partenaire.objects.all() 
-    #     context["cat_sol"] = Categories_Solution.objects.all()
-
-    #     return context
-
-# class PostDetail(DetailView):
-#     model = Post
-#     template_name='blog-detail.html'
 
 
 class ProductView(TemplateView):
     template_name = "produits.html"
 
-    def get_queryset(self):
-        self.category = get_object_or_404(Produit, slug=self.kwargs['slug'])
-        return self.category
-    
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cat"] = CATEGORY_CHOICES 
-        context["products"] = Produit.objects.filter(category=self.category)
+        print('cat')
+        context["intrusion"] = Produit.objects.filter(category= 'IN')
+        context["conventionnelle"] = Produit.objects.filter(category= 'IC')
+        context["adressable"] = Produit.objects.filter(category= 'IA')
         
         return context
     

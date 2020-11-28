@@ -20,49 +20,91 @@
             <div class="side-bar-product d-block">
                 <h2>Catégories</h2>
                 <ul>
-                    {% for x , y  in cat %}
-                        <li><a href="#{{y}}">{{y}}</a></li>
-                    {% endfor %}
-                
+                        <li><a class="link-prod" href="#intrusion">Intrusion</a></li>
+                        <li><a class="link-prod" href="#conventionnelle">Incendie Conventionnelle</a></li>
+                        <li><a class="link-prod" href="#adressable">Incendie Adressable</a></li>
                 </ul>
             </div>
         </div>
         <div class="col-9">
             <div class="main-produict">
-                {% for x , y  in cat %}
-                    <div id="{{y}}">
-                        <div class="py-5">
-                            <h3 class="font-weight-bold mb-0">{{y}}</h3>
-                            <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                            <div class="row">
-                                {% for prod in products %}
-                                    <div class="col-6 col-md-4 mb-3">
-                                        <a href="#">
+                <!-- partie intrusion -->
+                <div id="intrusion">
+                    <div class="py-5">
+                        <h3 class="font-weight-bold mb-0">Intrusion</h3>
+                        <div class="row">
+                            {% for prod in intrusion %}
+                                <div class="col-6 col-md-4 mb-3">
+                                    <a href="#">
 
-                                            <div class="hover hover-3 text-white rounded"><img src="https://res.cloudinary.com/mhmd/image/upload/v1570786274/hoverSet-5_ifnajv.jpg" alt="">
-                                                <div class="hover-overlay"></div>
-                                                <div class="hover-3-content px-5 py-4">
-                                                    <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
-                                                    <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
-                                                </div>
+                                        <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
+                                            <div class="hover-overlay"></div>
+                                            <div class="hover-3-content px-5 py-4">
+                                                <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
+                                                <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
                                             </div>
-                                        </a>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </div> 
-                    </div>
-                {% endfor %}
-        
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div> 
+                </div>
+                <!-- FIN partie intrusion -->
+                <!--  partie Conventionnelle -->
+
+                <div id="conventionnelle">
+                    <div class="py-5">
+                        <h3 class="font-weight-bold mb-0">Incendie Conventionnelle</h3>
+                        <div class="row">
+                            {% for prod in conventionnelle %}
+                                <div class="col-6 col-md-4 mb-3">
+                                    <a href="#">
+
+                                        <div class="hover hover-3 text-white rounded"><img class="img-fluid" src="{{prod.photo.url}}" alt="{{prod.reference}}">
+                                            <div class="hover-overlay"></div>
+                                            <div class="hover-3-content px-5 py-4">
+                                                <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
+                                                <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div> 
+                </div>
+                <!-- FIN partie Conventionnelle -->
+                <!--  partie Adressable -->
+
+                <div id="adressable">
+                    <div class="py-5">
+                        <h3 class="font-weight-bold mb-0">Incendie Adressable</h3>
+                        <div class="row">
+                            {% for prod in adressable %}
+                                <div class="col-6 col-md-4 mb-3">
+                                    <a href="#">
+
+                                        <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
+                                            <div class="hover-overlay"></div>
+                                            <div class="hover-3-content px-5 py-4">
+                                                <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
+                                                <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div> 
+                </div>
+                <!-- FIN partie Adressable -->
+
             </div>
         </div>
     </div>
 
-
-    
-
-
 </section>
-
+<!-- Fin section produits -->
 
 {% endblock content %}
