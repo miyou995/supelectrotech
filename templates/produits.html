@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>About Us</h3>
+                        <h3>Catalogue des produits </h3>
                     </div>
                 </div>
             </div>
@@ -15,37 +15,61 @@
     </div>
     <!--/ bradcam_area  -->
 <section class="container">
-    <div class="row">
-        <div class="col-3">
-            <div class="side-bar-product d-block">
-                <h2>Catégories</h2>
-                <ul>
-                        <li><a class="link-prod" href="#intrusion">Intrusion</a></li>
-                        <li><a class="link-prod" href="#conventionnelle">Incendie Conventionnelle</a></li>
-                        <li><a class="link-prod" href="#adressable">Incendie Adressable</a></li>
-                </ul>
+    <!-- sidebar -->
+    <div class="row d-flex justify-content-around">
+        <div class="d-none d-md-block col-md-3">
+            <aside class="side-bar-product d-block sidebar">
+
+                <div class="make-me-sticky">
+                    <div class="sidebar-widget search-box">
+                        <form method="post" action="#">
+                            <div class="form-group">
+                                <input type="search" name="search-field" value="" placeholder="Rechrcher un produit" required>
+                                <button type="submit"><span class="icon fa fa-search"></span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                <div class="sidebar-widget sidebar-blog-category">
+                    <div class="sidebar-title">
+                        <h2>Catégories</h2>
+                    </div>
+                        <ul class="cat-list">
+                            <li><a class="link-prod" href="#intrusion">Intrusion</a></li>
+                            <li><a class="link-prod" href="#conventionnelle">Incendie Conventionnelle</a></li>
+                            <li><a class="link-prod" href="#adressable">Incendie Adressable</a></li>
+                        </ul>
+                </div>
             </div>
+
+            </aside>
         </div>
-        <div class="col-9">
-            <div class="main-produict">
+    <!-- </div> -->
+    <!-- FIN sidebar -->
+
+    <!-- <div class="row"> -->
+
+        <div class="col- col-md-9  ">
+            <div class="main-product">
                 <!-- partie intrusion -->
                 <div id="intrusion">
                     <div class="py-5">
-                        <h3 class="font-weight-bold mb-0">Intrusion</h3>
-                        <div class="row">
+                        <div class="row ">
+                            <h2 class="font-weight-bold my-5 col-12">Intrusion</h2>
                             {% for prod in intrusion %}
-                                <div class="col-6 col-md-4 mb-3">
-                                    <a href="#">
+                                <div class="col- col-sm-6 col-xl-4 mb-3">
+                                    <a href="{% url 'produit-detail' slug=prod.slug %}">
 
                                         <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
                                             <div class="hover-overlay"></div>
                                             <div class="hover-3-content px-5 py-4">
-                                                <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
+                                                <h4 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h4>
                                                 <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
                                             </div>
                                         </div>
                                     </a>
                                 </div>
+                   
                             {% endfor %}
                         </div>
                     </div> 
@@ -55,21 +79,22 @@
 
                 <div id="conventionnelle">
                     <div class="py-5">
-                        <h3 class="font-weight-bold mb-0">Incendie Conventionnelle</h3>
                         <div class="row">
+                            <h2 class="font-weight-bold  my-5 col-12">Incendie Conventionnelle</h2>
                             {% for prod in conventionnelle %}
-                                <div class="col-6 col-md-4 mb-3">
-                                    <a href="#">
+                            <div class="col- col-sm-6 col-xl-4 mb-3">
+                                <a href="{% url 'produit-detail' slug=prod.slug %}">
 
-                                        <div class="hover hover-3 text-white rounded"><img class="img-fluid" src="{{prod.photo.url}}" alt="{{prod.reference}}">
-                                            <div class="hover-overlay"></div>
-                                            <div class="hover-3-content px-5 py-4">
-                                                <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
-                                                <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
-                                            </div>
+                                    <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
+                                        <div class="hover-overlay"></div>
+                                        <div class="hover-3-content px-5 py-4">
+                                            <h4 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h4>
+                                            <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
+                            </div>
+                           
                             {% endfor %}
                         </div>
                     </div> 
@@ -79,21 +104,22 @@
 
                 <div id="adressable">
                     <div class="py-5">
-                        <h3 class="font-weight-bold mb-0">Incendie Adressable</h3>
                         <div class="row">
+                            <h2 class="font-weight-bold  my-5 col-12">Incendie Adressable</h2>
                             {% for prod in adressable %}
-                                <div class="col-6 col-md-4 mb-3">
-                                    <a href="#">
+                            <div class="col- col-sm-6 col-xl-4 mb-3">
+                                <a href="{% url 'produit-detail' slug=prod.slug %}">
 
-                                        <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
-                                            <div class="hover-overlay"></div>
-                                            <div class="hover-3-content px-5 py-4">
-                                                <h3 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h3>
-                                                <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
-                                            </div>
+                                    <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
+                                        <div class="hover-overlay"></div>
+                                        <div class="hover-3-content px-5 py-4">
+                                            <h4 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h4>
+                                            <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
                                         </div>
-                                    </a>
-                                </div>
+                                    </div>
+                                </a>
+                            </div>
+      
                             {% endfor %}
                         </div>
                     </div> 
@@ -103,6 +129,7 @@
             </div>
         </div>
     </div>
+
 
 </section>
 <!-- Fin section produits -->

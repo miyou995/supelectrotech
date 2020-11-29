@@ -16,16 +16,14 @@ CATEGORY_CHOICES=[
 
 class Produit(models.Model):
 
-    # ordre       = models.IntegerField(blank=True, null=True)
     designation = models.CharField( max_length=50, verbose_name=("Désignation"))
     slug        = models.SlugField( max_length=70)
     category    = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
-    reference  = models.CharField(max_length=100, verbose_name=("Référence"), blank= True)
+    reference   = models.CharField(max_length=100, verbose_name=("Référence"), blank= True)
     description = RichTextField(verbose_name='Text en plus', blank= True, null=True)
     info_sup    = RichTextField(verbose_name='informations suplaimentaires', blank= True, null=True)
     photo       = models.ImageField(verbose_name='Photo du produit', upload_to='produits/')
-    photo_2     = models.ImageField(verbose_name='Photo du produit 2', upload_to='produits/', blank= True)
-    fichier_1   = models.FileField(verbose_name='fichier 1', upload_to='fichiers/', blank= True)
+    fichier_1   = models.FileField(verbose_name='Catalogue', upload_to='fichiers/', blank= True)
     fichier_2   = models.FileField(verbose_name='fichier 2', upload_to='fichiers/', blank= True)
     fichier_3   = models.FileField(verbose_name='fichier 3', upload_to='fichiers/', blank= True)
     fichier_4   = models.FileField(verbose_name='fichier 4', upload_to='fichiers/', blank= True)

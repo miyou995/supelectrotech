@@ -82,15 +82,10 @@ class ContactFormView(CreateView):
         return context
 
 
-
-    
-
-
-
-class PortfolioView(ListView):
+class ProductDetailView(DetailView):
     model = Produit
-    template_name = "portfolio_details.html"
-
+    template_name = "produit-detail.html"
+    context_object_name = 'produit'
 
 
 
@@ -100,7 +95,6 @@ class ProductView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cat"] = CATEGORY_CHOICES 
-        print('cat')
         context["intrusion"] = Produit.objects.filter(category= 'IN')
         context["conventionnelle"] = Produit.objects.filter(category= 'IC')
         context["adressable"] = Produit.objects.filter(category= 'IA')

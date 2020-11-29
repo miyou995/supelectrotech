@@ -12,7 +12,10 @@
   -ms-flex-pack: start;
   justify-content: start;
 }
-
+* {
+  box-sizing: border-box;
+  border: none;
+}
 /* Normal desktop :1200px. */
 /* Normal desktop :992px. */
 /* Tablet desktop :768px. */
@@ -80,6 +83,8 @@ button {
 h1, h2, h3, h4, h5 {
   font-family: "Poppins", sans-serif;
   color: #1F1F1F;
+  max-width: 100%;
+
 }
 
 /* line 45, ../../Arafath/CL/CL October/213. Business/HTML/scss/theme-default.scss */
@@ -802,7 +807,7 @@ h3 {
   padding: 5px;
   right: 0;
   margin-top: -5px;
-  top: -33px;
+  top: -40px;
 }
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
@@ -831,7 +836,7 @@ h3 {
 
 /* line 16, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
 .header-area .main-header-area {
-  padding: 18px 0;
+  padding: 39px 0;
   background: #fff;
   background: transparent;
 }
@@ -7012,3 +7017,228 @@ h6 {
   background: rgba(0, 0, 0, 0.8);
 }
 
+/*** ADDITIONNAL ***/
+.adding-fit{
+  height: 80px;
+  padding: 0px!important;
+}
+
+
+.side-bar-product {
+  position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+  height: 100%;
+  padding-top: 100px;
+}
+.main-product{
+  min-height: 1000px;
+
+}
+.make-me-sticky {
+  position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+    
+}
+
+
+/*Search Box Widget*/
+
+.sidebar-widget{
+  position: relative;
+  margin-bottom: 40px;
+}
+
+
+
+.sidebar .search-box .form-group{
+	position:relative;
+	margin:0px;	
+}
+
+.sidebar .search-box .form-group input[type="text"],
+.sidebar .search-box .form-group input[type="search"]{
+	position:relative;
+	line-height:30px;
+	padding:10px 50px 10px 20px;
+	background:#ffffff;
+	display:block;
+	font-size:15px;
+	width:100%;
+	height:52px;
+	color:#797979;
+	font-weight:400;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	border:1px solid #d3d3d3;
+}
+
+.sidebar .search-box .form-group textarea::-webkit-input-placeholder,
+.sidebar .search-box .form-group input::-webkit-input-placeholder{
+	color:#797979;
+}
+
+.sidebar .search-box .form-group button{
+	position:absolute;
+	right:0px;
+	top:0px;
+	height:52px;
+	width:60px;
+	display:block;
+	font-size:16px;
+	color:#585858;
+	line-height:100%;
+	font-weight:normal;
+	background:none;
+}
+/*Sidebar Title*/
+
+.sidebar-title{
+  position: relative;
+  margin-bottom:25px;
+}
+
+.sidebar-title h2{
+  font-family: 'Rufina', serif;
+  position: relative;
+  font-size: 24px;
+  color: #242424;
+  font-weight: 700;
+  line-height: 1.2em;
+  display:inline-block;
+  padding-right:45px;
+  text-transform: capitalize;
+}
+
+
+.cat-list{
+	position:relative;
+}
+
+.cat-list li{
+	position:relative;
+}
+
+.cat-list li a{
+	position:relative;
+	color:#233774;
+	font-size:16px;
+	font-weight:400;
+	padding-bottom:12px;
+	margin-bottom:12px;
+	display:block;
+	border-bottom:1px solid #e6e6e6;
+	transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	-ms-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+}
+
+.cat-list li:last-child a{
+	border-bottom:0px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+
+.cat-list li a:hover{
+	color:#233774;
+}
+.main-product h2 {
+  font-family: 'Rufina', serif;
+}
+
+
+
+/* line 20, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask h3 {
+  font-size: 36px;
+  font-weight: 300;
+  color: #001D38;
+  margin-bottom: 17px;
+}
+
+@media (max-width: 767px) {
+  /* line 20, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+  .accordion_area .faq_ask h3 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 20, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+  .accordion_area .faq_ask h3 {
+    font-size: 30px;
+  }
+}
+
+/* line 33, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask #accordion .card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: none;
+  border-radius: .25rem;
+  border-bottom: 1px solid #E8E8E8;
+}
+
+/* line 50, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask #accordion .card .card-header {
+  background-color: transparent;
+  padding: 4px 14px;
+  border: none;
+}
+
+/* line 55, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask #accordion button {
+  font-size: 15px;
+  color: #001D38 !important;
+  font-weight: 300 !important;
+}
+
+@media (max-width: 767px) {
+  /* line 59, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+  .accordion_area .faq_ask #accordion button span {
+    display: none;
+  }
+}
+
+/* line 65, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask #accordion .card .card-header {
+  background-color: transparent;
+  padding: 4px 30px;
+}
+
+/* line 80, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask #accordion .card .card-body {
+  font-size: 15px;
+  line-height: 28px;
+  color: #233774;
+  padding: 10px 30px 32px;
+  font-weight: 400;
+  line-height: 28px;
+}
+.card-body li {
+  list-style: disc;
+}
+/* line 90, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
+.accordion_area .faq_ask #accordion .btn-link.focus, .accordion_area .faq_ask #accordion .btn-link:focus {
+  text-decoration: none;
+  border-color: transparent;
+  box-shadow: none;
+  color: #df2731 !important;
+}
