@@ -6,26 +6,26 @@ from django.http import HttpResponseRedirect
 from .forms import ContactForm
 from .models import ContactForm, CATEGORY_CHOICES, Produit, Slide, Post
 # Create your views here.
-
+import random
 class Home(TemplateView):
     template_name='index.html'
 
+
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context["slides"] = Slide.objects.all()
-        # context["cat_prod"] = Categorie_produit.objects.all()
-        # context["cat_sol"] = Categories_Solution.objects.all()
+        context["popular"] = Produit.objects.all().order_by('?')[:4]
+        context["cat"] = CATEGORY_CHOICES 
+
         return context
     
 class AboutView(TemplateView):
     template_name = "about.html"
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # context["slides"] = SliderAPropos.objects.all()
-        # context["cat_prod"] = Categorie_produit.objects.all()
-        # context["cat_sol"] = Categories_Solution.objects.all()
 
+        context = super().get_context_data(**kwargs)
+        context["cat"] = CATEGORY_CHOICES 
         return context
 
 
@@ -36,7 +36,7 @@ class CatalogueListView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-
+        context["cat"] = CATEGORY_CHOICES 
         return context
 
 
@@ -45,7 +45,7 @@ class SolutionView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context["cat_sol"] = Categories_Solution.objects.all()
+        context["cat"] = CATEGORY_CHOICES 
         return context
     
 
@@ -56,7 +56,7 @@ class ContactView(TemplateView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context["cat_sol"] = Categories_Solution.objects.all()
+        context["cat"] = CATEGORY_CHOICES 
         return context
     
 
@@ -78,7 +78,7 @@ class ContactFormView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context["cat_sol"] = Categories_Solution.objects.all()
+        context["cat"] = CATEGORY_CHOICES 
         return context
 
 
@@ -87,7 +87,10 @@ class ProductDetailView(DetailView):
     template_name = "produit-detail.html"
     context_object_name = 'produit'
 
-
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cat"] = CATEGORY_CHOICES 
+        return context
 
 class ProductView(TemplateView):
     template_name = "produits.html"

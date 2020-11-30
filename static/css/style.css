@@ -1629,7 +1629,7 @@ h3 {
 .about_wrap_area .single_service_wrap {
   margin-bottom: 30px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 60px 63px;
+  padding: 60px 35px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -1865,7 +1865,7 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_gallery.scss */
 .gallery_area {
-  /* padding-top: 150px; */
+  padding-top: 150px;
   padding-bottom: 150px;
 }
 
@@ -7241,4 +7241,15 @@ h6 {
   border-color: transparent;
   box-shadow: none;
   color: #df2731 !important;
+}
+.map {
+	height: 460px;
+	margin-top: 40px;
+	margin-bottom: 75px;
+	-webkit-box-shadow: 0px 3px 15px rgba(0, 59, 85, 0.1);
+	box-shadow: 0px 3px 15px rgba(0, 59, 85, 0.1);
+}
+
+.map iframe {
+	width: 100%;
 }

@@ -174,14 +174,17 @@ center: true,
 
 // for filter
   // init Isotope
-  var $grid = $('.grid').isotope({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    masonry: {
-      // use outer width of grid-sizer for columnWidth
-      columnWidth: 1
-    }
-  });
+  $(window).load( function(){ 
+    var $grid = $('.grid').isotope({
+      itemSelector: '.grid-item',
+      percentPosition: true,
+      masonry: {
+        // use outer width of grid-sizer for columnWidth
+        columnWidth: 1
+      }
+    });
+   });
+  
 
   // filter items on button click
   $('.portfolio-menu').on('click', 'button', function () {

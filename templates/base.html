@@ -89,12 +89,12 @@
                                             <li><a class="active" href="{% url 'index' %}">home</a></li>
                                             <li><a href="{% url 'about' %}">About</a></li>
                                             <li><a href="{% url 'produits' %}">Produits</a></li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
+                                            <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">blog</a></li>
                                                     <li><a href="single-blog.html">single-blog</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> -->
                                             <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                      <li><a href="elements.html">elements</a></li>
@@ -109,11 +109,7 @@
                             </div>
                             <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                                 <div class="Appointment">
-                                    <div class="search_button">
-                                        <a href="#">
-                                            <i class="ti-search"></i>
-                                        </a>
-                                    </div>
+                                    
                                     <div class="book_btn d-none d-lg-block">
                                         <a class="popup-with-form" href="#test-form">un devis ?</a>
                                     </div>
@@ -139,15 +135,15 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-3 col-xl-3">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
                                     <img src="{% static 'img/footer_logo.png' %}" alt="">
                                 </a>
                             </div>
-                            <p>
-                                Base <br> line
+                            <p class="text-white">
+                                 SUPELECTROTECH, Toujours en Bonne Voie
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -171,40 +167,36 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-2 offset-xl-1 col-md-6 col-lg-3">
+                    <div class=" col-md-6 col-lg-4 col-xl-2 offset-xl-1">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
-                                    Solutions
-                            </h3>
+                            <h3 class="footer_title">Solutions</h3>
                             <ul>
-                                <li><a href="#">détection intrusion</a></li>
-                                <li><a href="#">détection incendie</a></li>
+                             
+                                <li><a href="{% url 'produits' %}#intrusion">détection intrusion</a></li>
+                                <li><a href="{% url 'produits' %}#conventionnelle">détection incendie conventionnelle</a></li>
+                                <li><a href="{% url 'produits' %}#adressable">détection adressable</a></li>
                             </ul>
 
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="col-md-6 col-lg-2 col-xl-2 ">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
-                                    Liens rapides
-                            </h3>
+                            <h3 class="footer_title">Liens rapides</h3>
                             <ul>
-                                <li><a href="#">A propos</a></li>
-                                <li><a href="#">Produits</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Devis Gratuit</a></li>
+                                <li><a href="{% url 'about' %}">A propos</a></li>
+                                <li><a href="{% url 'produits' %}">Produits</a></li>
+                                <!-- <li><a href="#">Blog</a></li> -->
+                                <li><a href="{% url 'contact' %}">Devis Gratuit</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="col-md-6 col-lg-3 col-xl-3">
                         <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Address
-                            </h3>
+                            <h3 class="footer_title">Coordonnées</h3>
                             <ul>
-                                    <li>200, D-block, Green lane Blida</li>
-                                    <li>+213 367 467 552</li>
-                                    <li><a href="#"> contact@sup.com</a></li>
+                                    <li>Zone Activité Atlas Lots 102Route de Beni Tamou-BLIDA-ALGERIE</li>
+                                    <li>025 20 01 44/5 /6</li>
+                                    <li><a href="mailto:commercialsupelectrotech@yahoo.fr">commercialsupelectrotech@yahoo.fr</a></li>
                                 </ul>
                         </div>
                     </div>
