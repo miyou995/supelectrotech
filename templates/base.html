@@ -63,8 +63,8 @@
                         <div class="col-xl-6 col-md-6">
                             <div class="short_contact_list">
                                 <ul>
-                                    <li><a href="#"> <i class="fa fa-envelope"></i> info@docmed.com</a></li>
-                                    <li><a href="#"> <i class="fa fa-phone"></i> 1601-609 6780</a></li>
+                                    <li><a href="mailto:s.supelectrotech@yahoo.fr"> <i class="fa fa-envelope"></i> s.supelectrotech@yahoo.fr</a></li>
+                                    <li><a href="tel:025 200 146"> <i class="fa fa-phone"></i> 025 200 146</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -74,50 +74,37 @@
             <div id="sticky-header" class=" main-header-area ">
                 <div class="container">
                     <div class="header_bottom_border">
-                        <div class="row align-items-center">
-                            <div class="col-xl-3 col-lg-2">
-                                <div class="logo">
-                                    <a href="{% url 'index' %}">
-                                        <img src="{% static 'img/logo.png' %}" alt="">
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-7">
-                                <div class="main-menu  d-none d-lg-block">
+                        <div class="row d-flex">
+                            <div class="col-md-8 offset-xl-1">
+                                <div class="main-menu d-inline">
                                     <nav>
                                         <ul id="navigation">
                                             <li><a class="active" href="{% url 'index' %}">home</a></li>
                                             <li><a href="{% url 'about' %}">About</a></li>
                                             <li><a href="{% url 'produits' %}">Produits</a></li>
-                                            <!-- <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li> -->
-                                            <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                     <li><a href="elements.html">elements</a></li>
-                                                    <li><a href="Portfolio.html">Portfolio</a></li>
-                                                    <li><a href="portfolio_details.html">Portfolio details</a></li>
-                                                </ul>
-                                            </li> -->
                                             <li><a href="{% url 'contact' %}">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class=" col-md-3 d-none d-md-inline">
                                 <div class="Appointment">
                                     
-                                    <div class="book_btn d-none d-lg-block">
+                                    <div class="book_btn ">
                                         <a class="popup-with-form" href="#test-form">un devis ?</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="mobile_menu d-block d-lg-none"></div>
-                            </div>
+                            <!-- <div class="col-xl-3 col-lg-2"> -->
+                                <!-- <div class="logo">
+                                    <a href="{% url 'index' %}">
+                                        <img src="{% static 'img/logo.png' %}" alt="">
+                                    </a>
+                                </div> -->
+                            <!-- </div> -->
+                            <!-- <div class="col-12">
+                                <div class="mobile_menu d-none"></div>
+                            </div> -->
                         </div>
                     </div>
 
@@ -134,8 +121,9 @@
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
+
                 <div class="row">
-                    <div class="col-md-6 col-lg-3 col-xl-3">
+                    <!-- <div class="col-md-6 col-lg-3 col-xl-3">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
@@ -166,20 +154,20 @@
                             </div>
 
                         </div>
-                    </div>
-                    <div class=" col-md-6 col-lg-4 col-xl-2 offset-xl-1">
+                    </div> -->
+                    <div class=" col-md-6 col-lg-4 4 ">
                         <div class="footer_widget">
                             <h3 class="footer_title">Solutions</h3>
                             <ul>
                              
-                                <li><a href="{% url 'produits' %}#intrusion">détection intrusion</a></li>
-                                <li><a href="{% url 'produits' %}#conventionnelle">détection incendie conventionnelle</a></li>
-                                <li><a href="{% url 'produits' %}#adressable">détection adressable</a></li>
+                                <li><a href="{% url 'produits' %}#intrusion">Détection Intrusion</a></li>
+                                <li><a href="{% url 'produits' %}#conventionnelle">Détection Incendie Conventionnelle</a></li>
+                                <li><a href="{% url 'produits' %}#adressable">Détection Adressable</a></li>
                             </ul>
 
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-2 col-xl-2 ">
+                    <div class="col-md-6 col-lg-4 ">
                         <div class="footer_widget">
                             <h3 class="footer_title">Liens rapides</h3>
                             <ul>
@@ -190,15 +178,39 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 col-xl-3">
+                    <div class="col-md-6 col-lg-4 ">
                         <div class="footer_widget">
                             <h3 class="footer_title">Coordonnées</h3>
                             <ul>
                                     <li>Zone Activité Atlas Lots 102Route de Beni Tamou-BLIDA-ALGERIE</li>
-                                    <li>025 20 01 44/5 /6</li>
+                                    <li class="font-weight-bold" > <a href="tel:025 20 01 41"> 025 20 01 41 </a></li>
+                                    <li class="font-weight-bold" > <a href="tel:025 20 01 44"> 025 20 01 44 </a></li>
+                                    <li class="font-weight-bold" > <a href="tel:025 20 01 46"> 025 20 01 46 </a></li>
+                                    <li>Fax: 025 20 01 45  </li>
                                     <li><a href="mailto:commercialsupelectrotech@yahoo.fr">commercialsupelectrotech@yahoo.fr</a></li>
                                 </ul>
                         </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="socail_links">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <i class="ti-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="ti-twitter-alt"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

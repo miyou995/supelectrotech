@@ -27,7 +27,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: normal;
   font-style: normal;
 }
@@ -81,7 +81,7 @@ button {
 
 /* line 41, ../../Arafath/CL/CL October/213. Business/HTML/scss/theme-default.scss */
 h1, h2, h3, h4, h5 {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #1F1F1F;
   max-width: 100%;
 
@@ -115,7 +115,7 @@ p {
   line-height: 28px;
   color: #4D4D4D;
   margin-bottom: 13px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* line 70, ../../Arafath/CL/CL October/213. Business/HTML/scss/theme-default.scss */
@@ -395,7 +395,7 @@ h3 {
   color: #131313;
   display: inline-block;
   padding: 18px 44px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -431,7 +431,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 14px 27px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -470,7 +470,7 @@ h3 {
   color: #fff;
   display: inline-block;
   padding: 13px 27px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -516,7 +516,7 @@ h3 {
   color: #233774 !important;
   display: inline-block;
   padding: 14px 31px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-weight: 400;
   border: 0;
@@ -970,7 +970,7 @@ h3 {
 /* line 108, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
 .header-area .main-header-area .Appointment .book_btn a {
   background: #233774;
-  padding: 12px 26px;
+  padding: 12px 10px;
   font-size: 14px;
   font-weight: 400;
   border: 1px solid transparent;
@@ -1019,7 +1019,7 @@ h3 {
   font-weight: 400;
   display: inline-block;
   padding: 0px 0px 0px 0px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   position: relative;
   text-transform: capitalize;
 }
@@ -1304,7 +1304,7 @@ h3 {
 /* line 17, ../../Arafath/CL/CL October/213. Business/HTML/scss/_slider.scss */
 .slider_area .single_slider .slider_text h3 {
   color: #FFF;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 50px;
   text-transform: capitalize;
   letter-spacing: 2px;
@@ -1457,8 +1457,8 @@ h3 {
   font-size: 16px;
   line-height: 28px;
   color: #727272;
-  margin-bottom: 22px;
-  margin-top: 28px;
+  /* margin-bottom: 22px;
+  margin-top: 28px; */
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
@@ -1468,10 +1468,10 @@ h3 {
   }
 }
 
-/* line 57, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
+/* line 57, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss
 .about_area .about_info ul {
   margin-bottom: 56px;
-}
+} */
 
 @media (max-width: 767px) {
   /* line 57, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
@@ -1492,20 +1492,7 @@ h3 {
   z-index: 1;
 }
 
-/* line 71, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
-.about_area .about_info ul li::before {
-  position: absolute;
-  left: 0;
-  background-image: url(../img/svg_icon/check.svg);
-  width: 16px;
-  height: 16px;
-  content: '';
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
+
 
 /* line 83, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
 .about_area .about_info .boxed-btn3 {
@@ -2030,7 +2017,7 @@ h3 {
 /* line 103, ../../Arafath/CL/CL October/213. Business/HTML/scss/_gallery.scss */
 .portfolio_details_area .portfolio_details_content p {
   font-size: 16px;
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: #727272;
   line-height: 28px;
 }
@@ -3477,7 +3464,7 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 30px;
-  background-position: center;
+  background-position: top;
   overflow: hidden;
 }
 
@@ -3511,11 +3498,11 @@ h3 {
   display: table;
   width: 100%;
   height: 100%;
-  background: #233774;
+  background: rgba(35, 55, 116, 0.4);
   -webkit-transform: translateY(40%);
   -moz-transform: translateY(40%);
   -ms-transform: translateY(40%);
-  transform: translateY(40%);
+  transform: translateY(80%);
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
@@ -3553,12 +3540,12 @@ h3 {
 }
 
 /* line 74, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
-.service_area .single_service:hover {
+.service_area .single_service {
   background-position: top;
 }
 
 /* line 76, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
-.service_area .single_service:hover .hover_content {
+.service_area .single_service .hover_content {
   -webkit-transform: translateY(0%);
   -moz-transform: translateY(0%);
   -ms-transform: translateY(0%);
@@ -3568,8 +3555,8 @@ h3 {
 }
 
 /* line 81, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
-.service_area .single_service:hover .service_hover {
-  background: rgba(0, 0, 0, 0.5);
+.service_area .single_service .service_hover {
+  background: rgba(35, 55, 116, 0.4);
 }
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_experts.scss */
@@ -6995,9 +6982,7 @@ h6 {
   transform: translate(-50%, -50%);
 }
 
-.hover-3 .hover-overlay {
-  background: rgba(0, 0, 0, 0.2);
-}
+
 
 .hover-3:hover img {
   width: 100%;
@@ -7018,10 +7003,10 @@ h6 {
 }
 
 /*** ADDITIONNAL ***/
-.adding-fit{
+/* .adding-fit{
   height: 80px;
   padding: 0px!important;
-}
+} */
 
 
 .side-bar-product {
@@ -7049,6 +7034,7 @@ h6 {
 .sidebar-widget{
   position: relative;
   margin-bottom: 40px;
+  width: 95%;
 }
 
 
@@ -7104,7 +7090,7 @@ h6 {
 }
 
 .sidebar-title h2{
-  font-family: 'Rufina', serif;
+  font-family: 'Roboto', serif;
   position: relative;
   font-size: 24px;
   color: #242424;
@@ -7150,7 +7136,7 @@ h6 {
 	color:#233774;
 }
 .main-product h2 {
-  font-family: 'Rufina', serif;
+  font-family: 'Roboto', serif;
 }
 
 

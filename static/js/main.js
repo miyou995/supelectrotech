@@ -4,13 +4,13 @@
 $(window).on('scroll', function () {
 	var scroll = $(window).scrollTop();
 	if (scroll < 400) {
-    $("#sticky-header").removeClass("sticky adding-fit");
+    $("#sticky-header").removeClass("sticky ");
     $("#sticky-header .main-menu").addClass("blanc");
     $('#back-top').fadeIn(500);
     $('#sticky-header .logo').addClass("d-none");
     $('#sticky-header').css("color:#000!important;");
 	} else {
-    $("#sticky-header").addClass("sticky adding-fit");
+    $("#sticky-header").addClass("sticky ");
     $("#sticky-header .main-menu").removeClass("blanc");
     $('#back-top').fadeIn(500);
     $('#sticky-header .logo').removeClass("d-none");
