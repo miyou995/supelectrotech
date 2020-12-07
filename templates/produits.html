@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_1">
-        <div class="container">
-            <div class="row">
-                <!-- <div class="col-xl-12">
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+    <div class="container">
+        <div class="row">
+            <!-- <div class="col-xl-12">
                     <div class="bradcam_text text-center">
                         <h3>Catalogue des produits </h3>
                     </div>
                 </div> -->
-            </div>
         </div>
     </div>
-    <!--/ bradcam_area  -->
+</div>
+<!--/ bradcam_area  -->
 <section class="container">
     <!-- sidebar -->
     <div class="row d-flex justify-content-around">
@@ -23,29 +23,30 @@
                     <div class="sidebar-widget search-box">
                         <form method="post" action="#">
                             <div class="form-group">
-                                <input type="search" name="search-field" value="" placeholder="Rechrcher un produit" required>
+                                <input type="search" name="search-field" value="" placeholder="Rechrcher un produit"
+                                    required>
                                 <button type="submit"><span class="icon fa fa-search"></span></button>
                             </div>
                         </form>
                     </div>
-                <div class="sidebar-widget sidebar-blog-category">
-                    <div class="sidebar-title">
-                        <h2>Catégories</h2>
-                    </div>
+                    <div class="sidebar-widget sidebar-blog-category">
+                        <div class="sidebar-title">
+                            <h2>Catégories</h2>
+                        </div>
                         <ul class="cat-list">
                             <li><a class="link-prod" href="#intrusion">Détection Intrusion</a></li>
                             <li><a class="link-prod" href="#conventionnelle">Détection Incendie Conventionnelle</a></li>
                             <li><a class="link-prod" href="#adressable">Détection Incendie Adressable</a></li>
                         </ul>
+                    </div>
                 </div>
-            </div>
 
             </aside>
         </div>
-    <!-- </div> -->
-    <!-- FIN sidebar -->
+        <!-- </div> -->
+        <!-- FIN sidebar -->
 
-    <!-- <div class="row"> -->
+        <!-- <div class="row"> -->
 
         <div class="col- col-md-9  ">
             <div class="main-product">
@@ -55,22 +56,26 @@
                         <div class="row ">
                             <h2 class="font-weight-bold my-5 col-12">Intrusion</h2>
                             {% for prod in intrusion %}
-                                <div class="col- col-sm-6 col-xl-4 mb-3">
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                                <div class="card">
                                     <a href="{% url 'produit-detail' slug=prod.slug %}">
-
-                                        <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
-                                            <div class="hover-overlay"></div>
-                                            <div class="hover-3-content px-5 py-4">
-                                                <h4 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h4>
-                                                <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
-                                            </div>
-                                        </div>
+                                        <img class="card-img" src="{{prod.photo.url}}" alt="{{prod.designation}}">
                                     </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"> <a
+                                                href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
+                                        </h4>
+                                        <h6 class="card-subtitle mb-2 text-muted">REF: {{prod.reference}}</h6>
+                                        <div class="buy d-flex justify-content-between align-items-center">
+                                            <a href="{% url 'produit-detail' slug=prod.slug %}"
+                                                class="btn btn-primary mt-3">Lire Plus</a>
+                                        </div>
+                                    </div>
                                 </div>
-                   
+                            </div>
                             {% endfor %}
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <!-- FIN partie intrusion -->
                 <!--  partie Conventionnelle -->
@@ -80,22 +85,26 @@
                         <div class="row">
                             <h2 class="font-weight-bold  my-5 col-12">Incendie Conventionnelle</h2>
                             {% for prod in conventionnelle %}
-                            <div class="col- col-sm-6 col-xl-4 mb-3">
-                                <a href="{% url 'produit-detail' slug=prod.slug %}">
-
-                                    <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
-                                        <div class="hover-overlay"></div>
-                                        <div class="hover-3-content px-5 py-4">
-                                            <h4 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h4>
-                                            <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                                <div class="card">
+                                    <a href="{% url 'produit-detail' slug=prod.slug %}">
+                                        <img class="card-img" src="{{prod.photo.url}}" alt="{{prod.designation}}">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"> <a
+                                                href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
+                                        </h4>
+                                        <h6 class="card-subtitle mb-2 text-muted">REF: {{prod.reference}}</h6>
+                                        <div class="buy d-flex justify-content-between align-items-center">
+                                            <a href="{% url 'produit-detail' slug=prod.slug %}"
+                                                class="btn btn-primary mt-3">Lire Plus</a>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
-                           
                             {% endfor %}
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <!-- FIN partie Conventionnelle -->
                 <!--  partie Adressable -->
@@ -105,22 +114,26 @@
                         <div class="row">
                             <h2 class="font-weight-bold  my-5 col-12">Incendie Adressable</h2>
                             {% for prod in adressable %}
-                            <div class="col- col-sm-6 col-xl-4 mb-3">
-                                <a href="{% url 'produit-detail' slug=prod.slug %}">
-
-                                    <div class="hover hover-3 text-white rounded"><img src="{{prod.photo.url}}" alt="{{prod.reference}}">
-                                        <div class="hover-overlay"></div>
-                                        <div class="hover-3-content px-5 py-4">
-                                            <h4 class="hover-3-title text-uppercase font-weight-bold mb-1 text-light">{{prod.reference}}</h4>
-                                            <!-- <p class="hover-3-description small text-uppercase mb-0">{{prod.designation}}</p> -->
+                            <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                                <div class="card">
+                                    <a href="{% url 'produit-detail' slug=prod.slug %}">
+                                        <img class="card-img" src="{{prod.photo.url}}" alt="{{prod.designation}}">
+                                    </a>
+                                    <div class="card-body">
+                                        <h4 class="card-title"> <a
+                                                href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
+                                        </h4>
+                                        <h6 class="card-subtitle mb-2 text-muted">REF: {{prod.reference}}</h6>
+                                        <div class="buy d-flex justify-content-between align-items-center">
+                                            <a href="{% url 'produit-detail' slug=prod.slug %}"
+                                                class="btn btn-primary mt-3">Lire Plus</a>
                                         </div>
                                     </div>
-                                </a>
+                                </div>
                             </div>
-      
                             {% endfor %}
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <!-- FIN partie Adressable -->
 

@@ -1,75 +1,102 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-    <!-- bradcam_area  -->
-    <div class="bradcam_area bradcam_bg_1">
-      <div class="container">
-          <div class="row">
-              <div class="col-xl-12">
-                  <div class="bradcam_text text-center">
-                      <h1 class="text-white">{{produit.designation}}</h1>
-                  </div>
-              </div>
-          </div>
+<!-- bradcam_area  -->
+<div class="bradcam_area bradcam_bg_1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="bradcam_text text-center">
+          <h1 class="text-white">{{produit.designation}}</h1>
+        </div>
       </div>
+    </div>
   </div>
-  <!--/ bradcam_area  -->
-  <!--Main layout-->
-  <main class="mt-5 pt-4">
-    <div class="container wow fadeIn">
+</div>
+<!--/ bradcam_area  -->
+<!--Main layout-->
+<main class="mt-5 pt-4 " style="min-height: 500px!important;">
+  <div class="container wow fadeIn">
 
-      <!-- Heading -->
-      <!--Grid row-->
-      <div class="row ">
-        <!--Grid column-->
-        <div class="col-md-9 mb-4">
-
-          <div class="accordion_area">
-            <div class="faq_ask">
-                <h3>{{produit.reference}}</h3>
-                <div id="accordion">
-                    <div class="card">
-                        <div class="card-header" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false"
-                                    aria-controls="collapseTwo"> <h4>Description</h4> </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                            data-parent="#accordion" >
-                            <div class="card-body">
-                              {{produit.description|safe}}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseOne" aria-expanded="false"
-                                    aria-controls="collapseOne"> <h4>Autres informations</h4> </button>
-                            </h5>
-                        </div>
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                            data-parent="#accordion">
-                            <div class="card-body">{{produit.info_sup|safe}}
-                            </div>
-                        </div>
-                    </div>
-                  
+    <!-- Heading -->
+    <!--Grid row-->
+    <div class="row ">
+      <!--Grid column-->
+      <div class="d-none d-md-block col-md-3">
+        <aside class="side-bar-product d-block sidebar">
+          <div class="make-me-sticky">
+            <div class="sidebar-widget search-box">
+              <form method="post" action="#">
+                <div class="form-group">
+                  <input type="search" name="search-field" value="" placeholder="Rechrcher un produit" required>
+                  <button type="submit"><span class="icon fa fa-search"></span></button>
                 </div>
+              </form>
             </div>
+            <div class="sidebar-widget sidebar-blog-category">
+              <div class="sidebar-title">
+                <h2>Catégories</h2>
+              </div>
+              <ul class="cat-list">
+                <li><a class="link-prod" href="{% url 'produits' %}#intrusion">Détection Intrusion</a></li>
+                <li><a class="link-prod" href="{% url 'produits' %}#conventionnelle">Détection Incendie
+                    Conventionnelle</a>
+                </li>
+                <li><a class="link-prod" href="{% url 'produits' %}#adressable">Détection Incendie Adressable</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+      <div class="col-md-6 mb-4">
+
+        <div class="accordion_area">
+          <div class="faq_ask">
+            <h3>{{produit.reference}}</h3>
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                      aria-expanded="false" aria-controls="collapseTwo">
+                      <h4>Description</h4>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body">
+                    {{produit.description|safe}}
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne"
+                      aria-expanded="false" aria-controls="collapseOne">
+                      <h4>Autres informations</h4>
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">{{produit.info_sup|safe}}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
-        </div>
-        <!--Grid column-->
+      </div>
+      <!--Grid column-->
 
-        <!--Grid column-->
-        <div class="col-md-3 mb-4">
+      <!--Grid column-->
+      <div class="col-md-3 mb-4">
 
-          <!-- Heading -->
-          
+        <!-- Heading -->
+
 
         <div>
           <a class="popup-image" href="{{produit.photo.url}}">
@@ -78,56 +105,55 @@
         </div>
         {% if produit.fichier_1 %}
         <h5>Fichers a télécharger</h5>
-          <!-- Cart -->
-          <ul class=" d-block list-group mb-3 z-depth-1">
-            <a href="{{produit.fichier_1.url}}" download>
-              <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="">Télécharger le Catalogue </h6>
-                  </div>
-                  <div>
-                    <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
-                  </div>
-                </li>
-              </a>
-            {% endif %}
+        <!-- Cart -->
+        <ul class=" d-block list-group mb-3 z-depth-1">
+          <a href="{{produit.fichier_1.url}}" download>
+            <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="">Télécharger le Catalogue </h6>
+              </div>
+              <div>
+                <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
+              </div>
+            </li>
+          </a>
+          {% endif %}
 
-            {% if produit.fichier_1 %}
-            <a href="{{produit.fichier_1.url}}" download>
-              <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="">Télécharger la fiche technique </h6>
-                  </div>
-                  <div>
-                    <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
-                  </div>
-                </li>
-              </a>
-            {% endif %}
-            {% if produit.fichier_1 %}
-            <a href="{{produit.fichier_1.url}}" download>
-              <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
-                  <div>
-                    <h6 class="">Télécharger la brochure </h6>
-                  </div>
-                  <div>
-                    <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
-                  </div>
-                </li>
-              </a>
-            {% endif %}
-          </ul>
-        </div>
-        <!--Grid column-->
-
+          {% if produit.fichier_1 %}
+          <a href="{{produit.fichier_1.url}}" download>
+            <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="">Télécharger la fiche technique </h6>
+              </div>
+              <div>
+                <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
+              </div>
+            </li>
+          </a>
+          {% endif %}
+          {% if produit.fichier_1 %}
+          <a href="{{produit.fichier_1.url}}" download>
+            <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
+              <div>
+                <h6 class="">Télécharger la brochure </h6>
+              </div>
+              <div>
+                <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
+              </div>
+            </li>
+          </a>
+          {% endif %}
+        </ul>
       </div>
-      <!--Grid row-->
+      <!--Grid column-->
 
     </div>
-  </main>
-  <!--Main layout-->
+    <!--Grid row-->
+
+  </div>
+</main>
+<!--Main layout-->
 
 
 
 {% endblock content %}
-
