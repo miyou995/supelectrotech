@@ -2852,7 +2852,7 @@ h3 {
 
 /* line 137, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
 .footer .copy-right_text .copy_right a {
-  color: #233774;
+  color: #007bff;
 }
 
 /* line 142, ../../Arafath/CL/CL October/213. Business/HTML/scss/_footer.scss */
@@ -3452,6 +3452,7 @@ h3 {
 
 /* line 19, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_area .single_service {
+  height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 30px;
@@ -3461,6 +3462,8 @@ h3 {
 
 /* line 25, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_area .single_service .service_hover {
+  height: 100%;
+
   text-align: center;
   padding: 104px 0 94px 0;
   background: rgba(0, 0, 0, 0.3);

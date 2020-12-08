@@ -15,7 +15,7 @@ CATEGORY_CHOICES=[
 
 
 class Produit(models.Model):
-
+    ordre       = models.IntegerField(blank=True, null=True )
     designation = models.CharField( max_length=50, verbose_name=("Désignation"))
     slug        = models.SlugField( max_length=70)
     category    = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
@@ -23,15 +23,18 @@ class Produit(models.Model):
     description = RichTextField(verbose_name='Text en plus', blank= True, null=True)
     info_sup    = RichTextField(verbose_name='informations suplaimentaires', blank= True, null=True)
     photo       = models.ImageField(verbose_name='Photo du produit', upload_to='produits/')
-    fichier_1   = models.FileField(verbose_name='Catalogue', upload_to='fichiers/', blank= True)
-    fichier_2   = models.FileField(verbose_name='fichier 2', upload_to='fichiers/', blank= True)
-    fichier_3   = models.FileField(verbose_name='fichier 3', upload_to='fichiers/', blank= True)
-    fichier_4   = models.FileField(verbose_name='fichier 4', upload_to='fichiers/', blank= True)
+    fichier_1   = models.FileField(verbose_name='Fiche technique ', upload_to='fichiers/', blank= True)
+    fichier_2   = models.FileField(verbose_name='Manuel instalateur', upload_to='fichiers/', blank= True)
+    fichier_3   = models.FileField(verbose_name='Manuel utilisateur', upload_to='fichiers/', blank= True)
+    fichier_4   = models.FileField(verbose_name='certificat', upload_to='fichiers/', blank= True)
+    is_active   = models.BooleanField(verbose_name='activer', default=True)
+
 
     def __str__(self):
         return self.designation
 
     class Meta:
+        ordering = [F('ordre').asc(nulls_last=True)]
         verbose_name = 'Produits'
         verbose_name_plural = 'Produits'
 
@@ -61,7 +64,7 @@ class ContactForm(models.Model):
     subject     = models.CharField(max_length=50)
     fichier     = models.FileField(upload_to='fichiers/% d/% m/% Y/', max_length=20, blank=True)
     message     = models.TextField(blank=True)
-    date_added = models.DateTimeField(auto_now_add=True)
+    date_added  = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
