@@ -7,11 +7,11 @@ admin.site.enable_nav_sidebar = False
 
 
 class ProduitAdmin(admin.ModelAdmin):
-    list_display = ('id','ordre' ,'designation', 'reference', 'category')
+    list_display = ('id','ordre','is_active' ,'designation', 'reference', 'category')
     prepopulated_fields = {"slug": ("designation",)}
     list_display_links = ('id','designation',)
-    list_per_page = 40
-    list_editable = ('ordre',)
+    list_per_page = 50
+    list_editable = ('ordre','is_active')
     list_filter = ('category',)
     search_fields = ('id', 'designation','reference')
 

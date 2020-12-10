@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.utils import timezone
 from django.db.models import F
 
-
+from tinymce.models import HTMLField
 from ckeditor.fields import RichTextField
 # Create your models here.
 
@@ -15,19 +15,21 @@ CATEGORY_CHOICES=[
 
 
 class Produit(models.Model):
-    ordre       = models.IntegerField(blank=True, null=True )
-    designation = models.CharField( max_length=50, verbose_name=("Désignation"))
-    slug        = models.SlugField( max_length=70)
-    category    = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
-    reference   = models.CharField(max_length=100, verbose_name=("Référence"), blank= True)
-    description = RichTextField(verbose_name='Text en plus', blank= True, null=True)
-    info_sup    = RichTextField(verbose_name='informations suplaimentaires', blank= True, null=True)
-    photo       = models.ImageField(verbose_name='Photo du produit', upload_to='produits/')
-    fichier_1   = models.FileField(verbose_name='Fiche technique ', upload_to='fichiers/', blank= True)
-    fichier_2   = models.FileField(verbose_name='Manuel instalateur', upload_to='fichiers/', blank= True)
-    fichier_3   = models.FileField(verbose_name='Manuel utilisateur', upload_to='fichiers/', blank= True)
-    fichier_4   = models.FileField(verbose_name='certificat', upload_to='fichiers/', blank= True)
-    is_active   = models.BooleanField(verbose_name='activer', default=True)
+    ordre           = models.IntegerField(blank=True, null=True )
+    designation     = models.CharField( max_length=50, verbose_name=("Désignation"))
+    slug            = models.SlugField( max_length=70)
+    category        = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
+    reference       = models.CharField(max_length=100, verbose_name=("Référence"), blank= True)
+    # description     = RichTextField(verbose_name='Text en plus', blank= True, null=True)
+    description_2   = HTMLField(verbose_name='partie 1', blank= True, null=True)
+    description_1   = HTMLField(verbose_name='partie 2', blank= True, null=True)
+    # info_sup        = RichTextField(verbose_name='informations suplaimentaires', blank= True, null=True)
+    photo           = models.ImageField(verbose_name='Photo du produit', upload_to='produits/')
+    fichier_1       = models.FileField(verbose_name='Fiche technique ', upload_to='fichiers/', blank= True)
+    fichier_2       = models.FileField(verbose_name='Manuel instalateur', upload_to='fichiers/', blank= True)
+    fichier_3       = models.FileField(verbose_name='Manuel utilisateur', upload_to='fichiers/', blank= True)
+    fichier_4       = models.FileField(verbose_name='certificat', upload_to='fichiers/', blank= True)
+    is_active       = models.BooleanField(verbose_name='activer', default=True)
 
 
     def __str__(self):
