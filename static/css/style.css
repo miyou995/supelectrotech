@@ -2663,7 +2663,7 @@ h3 {
 .footer .footer_top {
   padding-top: 50px;
   padding-bottom: 50px;
-  background: #2C2C2C;
+  background: #080e29;
 }
 
 @media (max-width: 767px) {
@@ -7234,5 +7234,8 @@ h6 {
 	width: 100%;
 }
 .main-product h2{
+  color: #233774;
+}
+.card h4 {
   color: #233774;
 }
