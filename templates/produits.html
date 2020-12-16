@@ -31,13 +31,41 @@
                     </div>
                     <div class="sidebar-widget sidebar-blog-category">
                         <div class="sidebar-title">
-                            <h2>Catégories</h2>
+                            <h2 class="text-uppercase">Catégories</h2>
                         </div>
-                        <ul class="cat-list">
-                            <li><a class="link-prod" href="#intrusion">Détection Intrusion</a></li>
-                            <li><a class="link-prod" href="#conventionnelle">Détection Incendie Conventionnelle</a></li>
-                            <li><a class="link-prod" href="#adressable">Détection Incendie Adressable</a></li>
-                        </ul>
+                        <div>
+                            <ul class="cat-list">
+                                <li><a class="link-prod" href="#intrusion">Détection Intrusion</a></li>
+                                <li><a class="link-prod" href="#conventionnelle">Détection Incendie Conventionnelle</a></li>
+                                <li><a class="link-prod" href="#adressable">Détection Incendie Adressable</a></li>
+                            </ul>
+                        </div>
+                        <div class="download mt-5">
+                            <div class="sidebar-title">
+                                <h2 class="text-uppercase">Téléchargement</h2>
+                            </div>
+                            <a href="{% static 'catalogue/Teknim_fire.pdf' %}" download>
+                                <li id="id_price" class=" d-flex justify-content-between ">
+                                  <div class="mt-1">
+                                    <h6 style="color: #233774;">Catalogue Détection Intrusion</h6>
+                                  </div>
+                                  <div>
+                                    <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
+                                  </div>
+                                </li>
+                              </a>
+                              <hr>
+                              <a  href="{% static 'catalogue/Teknim_Intruder.pdf' %}" download>
+                                <li id="id_price" class=" d-flex justify-content-between ">
+                                  <div class="mt-1">
+                                    <h6 style="color: #233774;">Catalogue Détection Incendie</h6>
+                                  </div>
+                                  <div>
+                                    <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
+                                  </div>
+                                </li>
+                              </a>
+                        </div>
                     </div>
                 </div>
 

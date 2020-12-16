@@ -43,8 +43,8 @@ autoplay:true,
 navText:['<i class="ti-angle-left"></i>','<i class="ti-angle-right"></i>'],
   nav:true,
 dots:false,
-autoplayHoverPause: true,
-autoplaySpeed: 800,
+// autoplayHoverPause: true,
+autoplaySpeed: 300,
   responsive:{
       0:{
           items:1,

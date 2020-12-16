@@ -28,6 +28,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
   font-style: normal;
+  /* background-color: #e0e0e0; */
 }
 
 /* line 12, ../../Arafath/CL/CL October/213. Business/HTML/scss/theme-default.scss */
@@ -1283,6 +1284,7 @@ h3 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  margin-bottom: 80px;
 }
 
 @media (max-width: 767px) {
@@ -1510,7 +1512,7 @@ h3 {
 
 /* line 93, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
 .about_wrap_area {
-  padding: 145px 0 115px 0;
+  padding: 80px 0 70px 0;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -1652,10 +1654,10 @@ h3 {
 }
 
 /* line 193, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
-.about_wrap_area .single_service_wrap:hover {
+/* .about_wrap_area .single_service_wrap:hover {
   background: #233774;
   border-color: #233774;
-}
+} */
 
 /* line 203, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
 .project_area {
@@ -1856,8 +1858,8 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_gallery.scss */
 .gallery_area {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  padding-top: 80px;
+  padding-bottom: 90px;
 }
 
 @media (max-width: 767px) {
@@ -1896,7 +1898,7 @@ h3 {
 }
 
 /* line 20, ../../Arafath/CL/CL October/213. Business/HTML/scss/_gallery.scss */
-.gallery_area .single-gallery .gallery_hover {
+/* .gallery_area .single-gallery .gallery_hover {
   position: absolute;
   left: 0;
   top: 0;
@@ -1904,7 +1906,7 @@ h3 {
   height: 100%;
   display: table;
   text-align: center;
-  background: rgba(24, 124, 238, 0.7);
+  background: rgba(8, 14, 41, 0.8);
   -webkit-transform: translateX(-50%);
   -moz-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -1915,7 +1917,7 @@ h3 {
   -o-transition: 0.5s;
   transition: 0.5s;
   visibility: hidden;
-}
+} */
 
 /* line 33, ../../Arafath/CL/CL October/213. Business/HTML/scss/_gallery.scss */
 .gallery_area .single-gallery .gallery_hover .hover_inner {

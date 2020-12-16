@@ -5,19 +5,39 @@
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="slider_active owl-carousel">
-            <div class="single_slider  d-flex align-items-center overlay2" style="background-image:url({% static 'img/banner/acc1.jpg' %});">
+            <div class="single_slider  d-flex align-items-center overlay2" style="background-image:url({% static 'img/banner/acc5.jpg' %});">
               {% comment %}
-                  <!-- slider_bg_2  -->
               {% endcomment %}
+                <div class="container">
+                    <div class="row d-flex justify-content-end">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <!-- <h3> SUPELECTROTECH</h3> -->
+                                <h3> La Sécurité En Toute Sérénité</h3>
+                                <!-- <h4> Détection Intrusion</h4> -->
+                                <div class="video_service_btn">
+                                    
+                                    <a href="{% url 'produits' %}" class="boxed-btn3-white"> <i class="fa fa-play"></i>
+                                        Détection Intrusion</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center  overlay2" style="background-image:url({% static 'img/banner/acc1.jpg' %});">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="slider_text ">
-                                <h3> La Sécurité en Toute Sérénité</h3>
+                                <!-- <h3> SUPELECTROTECH</h3> -->
+                                <h3> La Sécurité En Toute Sérénité </h3>
+                                <!-- <h4>Détection Incendie Conventionnelle</h4> -->
+
                                 <div class="video_service_btn">
                                     
                                     <a href="{% url 'produits' %}" class="boxed-btn3-white"> <i class="fa fa-play"></i>
-                                        Découvrez nos produits</a>
+                                        Détection Incendie Conventionnelle</a>
                                 </div>
                             </div>
                         </div>
@@ -29,86 +49,38 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="slider_text ">
-                                <h3> La Sécurité en Toute Sérénité</h3>
+                                <!-- <h3> SUPELECTROTECH</h3> -->
+                                <h3> La Sécurité En Toute Sérénité</h3>
+                                
                                 <div class="video_service_btn">
                                     
-                                    <a href="{% url 'produits' %}" class="boxed-btn3-white"> <i class="fa fa-play"></i>
-                                        Découvrez nos produits</a>
+                                    <a href="{% url 'produits' %}" class="boxed-btn3-white"> <i class="fa fa-play"></i>Détection Incendie Adressable</a>
                                 </div>
+                                
+                                <!-- <h4 cl>Détection Incendie Adressable</h4> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider  d-flex align-items-center  overlay2" style="background-image:url({% static 'img/banner/acc3.jpg' %});">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text ">
-                                <h3> La Sécurité en Toute Sérénité </h3>
-                                <div class="video_service_btn">
-                                    
-                                    <a href="{% url 'produits' %}" class="boxed-btn3-white"> <i class="fa fa-play"></i>
-                                        Découvrez nos produits</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- slider_area_end -->
 
     <!-- service_area_start -->
-    <div class="service_area">
+    <!-- <div class="service_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-50">
-                        <h1>SUPELECTROTECH, Toujours en Bonne Voie</h1>
+                        <h1>SUPELECTROTECH</h1>
                     </div>
                 </div>
             </div>
-            <div class="row d-flex" style="display:flex">
-                <div class="col-xl-4 col-md-4">
-                    <a href="{% url 'produits' %}#intrusion">
-                        <div class="single_service service_bg_1">
-                            <div class="service_hover">
-                                <h3>Détection Intrusion</h3>
-                                <h4 class="text-white mt-3">Gamme Complète et innovante.</h4>
-                                
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <a href="{% url 'produits' %}#conventionnelle">
-                        <div class="single_service service_bg_2">
-                            <div class="service_hover">
-                                <h3>Détection Incendie Conventionnelle</h3>
-                                <h4 class="text-white mt-3">Simple, Efficace et facile à installer</h4>
-                            
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-xl-4 col-md-4">
-                    <a href="{% url 'contact' %}">
-                        <div class="single_service service_bg_3 hover_content">
-                            <div class="service_hover">
-                                <h3>Détection Incendie Adressable </h3>
-                                <h4 class="text-white mt-3">Technologie Pointue et Fiable</h4>
-                               
-                            </div>
-                        </div>
-                    </a>
 
-                </div>
-            </div>
         </div>
-    </div>
+    </div> -->
     <!-- service_area_end -->
 
     <!-- about  -->
@@ -168,19 +140,7 @@
                         </div>
                     </div>
                 {% endfor %}                 
-                <div class="col-xl-12 col-lg-12 grid-item cat2 col-md-12">
-                    <div class="single-gallery mb-20">
-                        <div class="portfolio-img">
-                                <img src="{% static 'img/gallery/pop.jpg' %}" alt="">
-                        </div>
-                        <div class="gallery_hover">
-                            <a  href="{% url 'produits' %}" class="hover_inner">
-                                        <h3>Visiter Notre Catalogue</h3>
-                                        <!-- <span>Branding</span> -->
-                                </a>
-                            </div>
-                    </div>
-                </div>
+
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -234,7 +194,7 @@
                     <div class="project_info text-center">
                         <h3>Vous avez une question ?</h3>
 
-                        <a href="#" class="boxed-btn3-white">Contactez nous</a>
+                        <a href="{% url 'contact' %}" class="boxed-btn3-white">Contactez nous</a>
                     </div>
                 </div>
             </div>
@@ -242,3 +202,42 @@
     </div>
     <!--/ project  -->
 {% endblock content %}
+
+
+
+<!-- <div class="row d-flex" style="display:flex">
+    <div class="col-xl-4 col-md-4">
+        <!-- <a href="{% url 'produits' %}#intrusion">
+            <div class="single_service service_bg_1">
+                <div class="service_hover">
+                    
+                </div>
+            </div>
+        </a> -->
+        <!-- <h3>Détection Intrusion</h3>
+        <h4 class=" mt-3">Gamme Complète et Innovante.</h4>
+    </div>
+    <div class="col-xl-4 col-md-4"> -->
+        <!-- <a href="{% url 'produits' %}#conventionnelle">
+            <div class="single_service service_bg_2">
+                <div class="service_hover">
+                    
+                </div>
+            </div>
+        </a> -->
+        <!-- <h3>Détection Incendie Conventionnelle</h3>
+        <h4 class=" mt-3">Simple, Efficace et Facile à Installer</h4>
+    </div>
+    <div class="col-xl-4 col-md-4"> -->
+        <!-- <a href="{% url 'contact' %}">
+            <div class="single_service service_bg_3 hover_content">
+                <div class="service_hover">
+                    
+                </div>
+            </div>
+        </a> -->
+        <!-- <h3>Détection Incendie Adressable </h3>
+        <h4 class=" mt-3">Technologie Pointue et Fiable</h4>
+
+    </div>
+</div> --> -->
