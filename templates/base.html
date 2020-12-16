@@ -166,16 +166,34 @@
                                 <li><a href="{% url 'produits' %}#conventionnelle">Détection Incendie Conventionnelle</a></li>
                                 <li><a href="{% url 'produits' %}#adressable">Détection Incendie Adressable</a></li>
                             </ul>
-
+                            <div class="download mt-5 d-none d-md-block">
+                                <div class="">
+                                    <h2 class="footer_title">Téléchargement</h2>
+                                </div>
+                                <a href="{% static 'catalogue/Teknim_fire.pdf' %}" download>
+                                    <li id="id_price" class=" d-flex justify-content-between ">
+                                      <div class="mt-1">
+                                        <h6 style="color: #ffffff;">Télécharger Le Catalogue Détection Intrusion</h6>
+                                      </div>
+                                    </li>
+                                  </a>
+                                  <hr>
+                                  <a  href="{% static 'catalogue/Teknim_Intruder.pdf' %}" download>
+                                    <li id="id_price" class=" d-flex justify-content-between ">
+                                      <div class="mt-1">
+                                        <h6 style="color: #ffffff;">Télécharger Le Catalogue Détection Incendie</h6>
+                                      </div>
+                                    </li>
+                                  </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 ">
+                    <div class="col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">Liens rapides</h3>
                             <ul>
                                 <li><a href="{% url 'about' %}">A propos</a></li>
                                 <li><a href="{% url 'produits' %}">Produits</a></li>
-                                <!-- <li><a href="#">Blog</a></li> -->
                                 <li><a href="{% url 'contact' %}">Devis Gratuit</a></li>
                             </ul>
                         </div>
@@ -195,6 +213,24 @@
                                 </ul>
                         </div>
                     </div>
+                </div>
+                <div class="download mt-5 d-block d-md-none">
+                        <h2 class="footer_title text-light">Téléchargement</h2>
+                    <a href="{% static 'catalogue/Teknim_fire.pdf' %}" download>
+                        <li id="id_price" class=" d-flex justify-content-between ">
+                          <div class="">
+                            <h6 style="color: #ffffff;">Télécharger Le Catalogue Détection Intrusion</h6>
+                          </div>
+                        </li>
+                      </a>
+                      <hr>
+                      <a  href="{% static 'catalogue/Teknim_Intruder.pdf' %}" download>
+                        <li id="id_price" class=" d-flex justify-content-between ">
+                          <div class="">
+                            <h6 style="color: #ffffff;">Télécharger Le Catalogue Détection Incendie</h6>
+                          </div>
+                        </li>
+                      </a>
                 </div>
                 <div class="row d-flex justify-content-center">
                     <div class="socail_links">
