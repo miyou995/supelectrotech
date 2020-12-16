@@ -14,7 +14,7 @@ class Home(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["popular"] = Produit.objects.all().order_by('?')[:4]
+        context["popular"] = Produit.objects.all().order_by('?')[:3]
         context["cat"] = CATEGORY_CHOICES 
 
         return context

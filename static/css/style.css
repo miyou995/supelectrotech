@@ -1269,19 +1269,17 @@ h3 {
   }
 }
 
-/* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_slider.scss */
-.slider_bg_1 {
+/* .slider_bg_1 {
   background-image: url(../img/banner/banner.png);
 }
 
-/* line 4, ../../Arafath/CL/CL October/213. Business/HTML/scss/_slider.scss */
 .slider_bg_2 {
   background-image: url(../img/banner/banner2.png);
-}
+} */
 
 /* line 8, ../../Arafath/CL/CL October/213. Business/HTML/scss/_slider.scss */
 .slider_area .single_slider {
-  height: 900px;
+  height: 700px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1484,7 +1482,20 @@ h3 {
   font-weight: 400;
   z-index: 1;
 }
-
+/* .financial_solution_area .about_check ul li::before {
+  position: absolute;
+  color:#001D38;
+  left: 0;
+  background-image: url(../img/svg_icon/check.svg);
+  width: 16px;
+  height: 16px;
+  content: '';
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+} */
 
 
 /* line 83, ../../Arafath/CL/CL October/213. Business/HTML/scss/_about.scss */
@@ -2900,10 +2911,12 @@ h3 {
 .bradcam_bg_1 {
   background-image: url(../img/banner/bradcam_1.png);
 }
-
+.bradcam_bg_prod {
+  background-image: url(../img/banner/pr.jpg);
+}
 /* line 4, ../../Arafath/CL/CL October/213. Business/HTML/scss/_bradcam.scss */
 .breadcam_bg_2 {
-  background-image: url(../img/banner/bradcam_2.png);
+  background-image: url(../img/banner/prd.jpg);
 }
 
 /* line 7, ../../Arafath/CL/CL October/213. Business/HTML/scss/_bradcam.scss */
@@ -2920,7 +2933,7 @@ h3 {
 .bradcam_area {
   background-size: cover;
   background-position: center center;
-  padding: 280px 0 165px 0;
+  padding: 180px 0 165px 0;
   background-repeat: no-repeat;
   position: relative;
   z-index: 0;
@@ -3415,17 +3428,17 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_bg_1 {
-  background-image: url(../img/about/1.png);
+  background-image: url(../img/department/intrusion.jpg)
 }
 
 /* line 3, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_bg_2 {
-  background-image: url(../img/about/2.png);
+  background-image: url(../img/department/conventionnel.jpg);
 }
 
 /* line 5, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_bg_3 {
-  background-image: url(../img/about/3.png);
+  background-image: url(../img/department/adressable.jpg);
 }
 
 /* line 8, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
@@ -3550,7 +3563,7 @@ h3 {
 
 /* line 81, ../../Arafath/CL/CL October/213. Business/HTML/scss/_service.scss */
 .service_area .single_service .service_hover {
-  background: rgba(35, 55, 116, 0.4);
+  background: rgba(35, 55, 116, 0.7);
 }
 
 /* line 1, ../../Arafath/CL/CL October/213. Business/HTML/scss/_experts.scss */

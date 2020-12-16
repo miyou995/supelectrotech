@@ -2,12 +2,11 @@
 {% load static %}
 {% block content %}
 <!-- bradcam_area  -->
-<div class="bradcam_area bradcam_bg_1">
+<div class="bradcam_area breadcam_bg_2">
   <div class="container">
     <div class="row">
       <div class="col-xl-12">
         <div class="bradcam_text text-center">
-          <h1 class="text-white">{{produit.designation}}</h1>
         </div>
       </div>
     </div>
@@ -54,6 +53,8 @@
         <div class="accordion_area">
           <div class="faq_ask">
             <h3>{{produit.reference}}</h3>
+          <h1 class="h2">{{produit.designation}}</h1>
+
             <div id="accordion">
               <div class="card">
                 <div class="card-header" id="headingTwo">
@@ -111,14 +112,14 @@
             <img class='img-fluid' src='{{produit.photo.url}}' alt='{{produit.name}}'>
           </a>
         </div>
-        <h5>Fichers a Télécharger</h5>
+        <h5>Fichiers à Télécharger</h5>
         <!-- Cart -->
         <ul class="d-block list-group mb-3 z-depth-1">
           {% if produit.fichier_1 %}
             <a href="{{produit.fichier_1.url}}" download>
               <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="">Fiche technique</h6>
+                  <h6 class="">Fiche Technique</h6>
                 </div>
                 <div>
                   <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
@@ -131,7 +132,7 @@
             <a href="{{produit.fichier_2.url}}" download>
               <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="">Manuel instalateur </h6>
+                  <h6 class="">Manuel Instalateur </h6>
                 </div>
                 <div>
                   <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
@@ -144,7 +145,7 @@
             <a href="{{produit.fichier_3.url}}" download>
               <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="">Manuel utilisateur </h6>
+                  <h6 class="">Manuel Utilisateur </h6>
                 </div>
                 <div>
                   <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">
@@ -157,7 +158,7 @@
             <a href="{{produit.fichier_4.url}}" download>
               <li id="id_price" class="list-group-item d-flex justify-content-between lh-condensed">
                 <div>
-                  <h6 class="">certificat</h6>
+                  <h6 class="">Certificat</h6>
                 </div>
                 <div>
                   <img class="" src="{% static 'img/svg_icon/download.svg' %}" alt="" srcset="">

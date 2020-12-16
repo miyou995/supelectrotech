@@ -5,7 +5,7 @@
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="slider_active owl-carousel">
-            <div class="single_slider  d-flex align-items-center overlay2" style="background-image:url({% static 'img/banner/banner2.png' %});">
+            <div class="single_slider  d-flex align-items-center overlay2" style="background-image:url({% static 'img/banner/acc1.jpg' %});">
               {% comment %}
                   <!-- slider_bg_2  -->
               {% endcomment %}
@@ -24,7 +24,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single_slider  d-flex align-items-center  overlay2" style="background-image:url({% static 'img/banner/banner.png' %});">
+            <div class="single_slider  d-flex align-items-center  overlay2" style="background-image:url({% static 'img/banner/acc2.jpg' %});">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <div class="single_slider  d-flex align-items-center  overlay2" style="background-image:url({% static 'img/banner/banner2.png' %});">
+            <div class="single_slider  d-flex align-items-center  overlay2" style="background-image:url({% static 'img/banner/acc3.jpg' %});">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
@@ -77,7 +77,7 @@
                         <div class="single_service service_bg_1">
                             <div class="service_hover">
                                 <h3>Détection Intrusion</h3>
-                                <h4 class="text-white">Gamme Complète et innovante.</h4>
+                                <h4 class="text-white mt-3">Gamme Complète et innovante.</h4>
                                 
                             </div>
                         </div>
@@ -87,8 +87,8 @@
                     <a href="{% url 'produits' %}#conventionnelle">
                         <div class="single_service service_bg_2">
                             <div class="service_hover">
-                                <h3>Détection Incendie</h3>
-                                <h4 class="text-white">Technologie Pointue et Facile a Utiliser</h4>
+                                <h3>Détection Incendie Conventionnelle</h3>
+                                <h4 class="text-white mt-3">Simple, Efficace et facile à installer</h4>
                             
                             </div>
                         </div>
@@ -98,7 +98,8 @@
                     <a href="{% url 'contact' %}">
                         <div class="single_service service_bg_3 hover_content">
                             <div class="service_hover">
-                                <h3>Service  Clients</h3>
+                                <h3>Détection Incendie Adressable </h3>
+                                <h4 class="text-white mt-3">Technologie Pointue et Fiable</h4>
                                
                             </div>
                         </div>
@@ -124,7 +125,7 @@
                         <h3>SUPELECTROTECH, Toujours en Bonne Voie</h3>
                         <p>Fondée en 1993 et implantée à BLIDA, plus exactement à la Zone Industrielle ATLAS. SUPELECTROTECH n’est pas uniquement une entreprise d’Importation, et de Distribution des équipements de sécurité électronique ..</p>
                         <div class=" about_btn">
-                            <a class="boxed-btn3" href="#">En lire plus</a>
+                            <a class="boxed-btn3" href="{% url 'about' %}#suite_about">En lire plus</a>
                         </div>
                     </div>
                 </div>
@@ -146,7 +147,7 @@
                         <div class="section_title text-center mb-50">
                       
                                 <h3>Nos produits populaires</h3>
-                                <p>These cases are perfectly simple and easy to distinguish. In a free <br> hour, when our power of choice is untrammelled.</p>
+                                <!-- <p>These cases are perfectly simple and easy to distinguish. In a free <br> hour, when our power of choice is untrammelled.</p> -->
                             </div>
                 </div>
             </div>
@@ -155,33 +156,31 @@
                 {% for  produit in popular  %}
                     <div class="col-xl-4 col-lg-6 grid-item cat1 col-md-6">
                         <div class="single-gallery mb-20">
-                                <div class="portfolio-img">
-                                        <img src="{{produit.photo.url}}" alt="">
-                                </div>
-                                <div class="gallery_hover">
-                                    <a  href="{% url 'produit-detail' slug=produit.slug %}" class="hover_inner">
-                                            <h3>{{produit.reference}}</h3>
-                                            <span>{{produit.get_category_display}}</span>
-                                    </a>
-                                </div>
+                            <div class="portfolio-img">
+                                    <img src="{{produit.photo.url}}" alt="">
+                            </div>
+                            <div class="gallery_hover">
+                                <a  href="{% url 'produit-detail' slug=produit.slug %}" class="hover_inner">
+                                    <h3>{{produit.reference}}</h3>
+                                    <span>{{produit.get_category_display}}</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}                 
-                <div class="col-xl-8 col-lg-6 grid-item cat2 col-md-6">
+                <div class="col-xl-12 col-lg-12 grid-item cat2 col-md-12">
                     <div class="single-gallery mb-20">
                         <div class="portfolio-img">
-                                <img src="{% static 'img/gallery/4.png' %}" alt="">
+                                <img src="{% static 'img/gallery/pop.jpg' %}" alt="">
                         </div>
                         <div class="gallery_hover">
-                            <a  href="portfolio_details.html" class="hover_inner">
-                                        <h3>Product Branding</h3>
-                                        <span>Branding</span>
+                            <a  href="{% url 'produits' %}" class="hover_inner">
+                                        <h3>Visiter Notre Catalogue</h3>
+                                        <!-- <span>Branding</span> -->
                                 </a>
                             </div>
                     </div>
                 </div>
-                              
-
             </div>
             <div class="row">
                 <div class="col-xl-12">
@@ -200,6 +199,12 @@
             <div class="row">
                 <div class="col-xl-4 col-md-6 col-lg-4">
                     <div class="single_service_wrap text-center">
+                        <img src="{% static 'img/svg_icon/puzzle.svg' %}" alt="">
+                        <h3>Bon prix, Bon Choix</h3>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_service_wrap text-center">
                         <img src="{% static 'img/svg_icon/controls.svg' %}" alt="">
                         <h3>Qualité Garantie</h3>
                     </div>
@@ -210,12 +215,7 @@
                         <h3>Accompagnement de A à Z</h3>
                     </div>
                 </div>
-                <div class="col-xl-4 col-md-6 col-lg-4">
-                    <div class="single_service_wrap text-center">
-                        <img src="{% static 'img/svg_icon/puzzle.svg' %}" alt="">
-                        <h3>Bon prix, Bon Choix</h3>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>

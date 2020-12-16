@@ -16,7 +16,7 @@ CATEGORY_CHOICES=[
 
 class Produit(models.Model):
     ordre           = models.IntegerField(blank=True, null=True )
-    designation     = models.CharField( max_length=50, verbose_name=("Désignation"))
+    designation     = models.CharField( max_length=150, verbose_name=("Désignation"))
     slug            = models.SlugField( max_length=70)
     category        = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
     reference       = models.CharField(max_length=100, verbose_name=("Référence"), blank= True)
