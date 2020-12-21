@@ -1065,7 +1065,9 @@ h3 {
 
 /* line 191, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: #233774;
+  font-size: 17px;
+  font-weight: bold;
+  color: #c00000;
 }
 
 /* line 195, ../../Arafath/CL/CL October/213. Business/HTML/scss/_header.scss */
@@ -5271,14 +5273,14 @@ h6 {
 }
 
 /* line 14, ../../Arafath/CL/CL October/213. Business/HTML/scss/_blog.scss */
-.blog_area a:hover, .blog_area a :hover {
+/* .blog_area a:hover, .blog_area a :hover {
   background: -webkit-linear-gradient(131deg, #233774 0%, #233774 99%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-decoration: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-}
+} */
 
 /* line 24, ../../Arafath/CL/CL October/213. Business/HTML/scss/_blog.scss */
 .single-blog {
@@ -7253,4 +7255,8 @@ h6 {
 }
 .card h4 {
   color: #233774;
+}
+
+.categorie-article{
+  cursor: pointer;
 }

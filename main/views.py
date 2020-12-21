@@ -4,7 +4,7 @@ from django.core.mail import send_mail, EmailMessage
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .forms import ContactForm
-from .models import ContactForm, CATEGORY_CHOICES, Produit, Slide, Post
+from .models import ContactForm, CATEGORY_CHOICES, Produit, Slide, Post, Tag, Post
 # Create your views here.
 import random
 class Home(TemplateView):
@@ -104,3 +104,32 @@ class ProductView(TemplateView):
         
         return context
     
+
+class BlogView(ListView):
+    model = Post
+    context_object_name = 'posts_list'
+    template_name = "blog.html"
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cat"] = CATEGORY_CHOICES 
+        context["intrusion"] = Produit.objects.filter(category= 'IN')
+        context["conventionnelle"] = Produit.objects.filter(category= 'IC')
+        context["adressable"] = Produit.objects.filter(category= 'IA')
+        context['tags']= Tag.objects.all()
+        context['postes']= Post.objects.all()
+        return context
+
+
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'blog-detail.html'
+    context_object_name = 'post'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["cat"] = CATEGORY_CHOICES 
+        context["intrusion"] = Produit.objects.filter(category= 'IN')
+        context["conventionnelle"] = Produit.objects.filter(category= 'IC')
+        context["adressable"] = Produit.objects.filter(category= 'IA')
+        context['postes']= Post.objects.all()
+        return context

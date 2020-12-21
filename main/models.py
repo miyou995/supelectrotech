@@ -6,16 +6,21 @@ from django.db.models import F
 from tinymce.models import HTMLField
 from ckeditor.fields import RichTextField
 # Create your models here.
-
+import datetime
 CATEGORY_CHOICES=[
     ('IN', 'Intrusion'),
     ('IC', 'Incendie Conventionnelle'),
     ('IA', 'Incendie Adressable'),
     ]
+class Marque(models.Model):
+    name = models.CharField(max_length=100, verbose_name=("Nom de la marque"), blank=True, null=True)
+    logo = models.ImageField(verbose_name='Logo de la marque', upload_to='produits/', blank=True, null=True)
 
-
+    def __str__(self):
+        return self.name
 class Produit(models.Model):
     ordre           = models.IntegerField(blank=True, null=True )
+    marque          = models.ForeignKey(Marque, on_delete=models.CASCADE, blank=True, null=True)
     designation     = models.CharField( max_length=150, verbose_name=("Désignation"))
     slug            = models.SlugField( max_length=70)
     category        = models.CharField(max_length=2, choices=CATEGORY_CHOICES, default='IN')
@@ -74,14 +79,26 @@ class ContactForm(models.Model):
     class Meta:
         verbose_name = 'Formulaire de contact'
 
+class Tag(models.Model):
+    tag = models.CharField(max_length=50, verbose_name='categorie')
+    def __str__(self):
+        return self.tag
+    class Meta:
+        verbose_name = 'Categories des articles'
+
 
 
 class Post(models.Model):
     titre = models.CharField(max_length=200)
+    tag = models.ForeignKey(Tag, verbose_name='Categorie' ,on_delete=models.CASCADE, blank=True, null=True)
     slug = models.SlugField(max_length=100)
-    intro = models.CharField(max_length=200, blank=True)
-    image = models.ImageField(verbose_name='Image' ,upload_to='slides/', blank= True)
-    text = RichTextField(verbose_name='Article', blank= True, null=True)
+    intro = models.TextField( blank=True)
+    image_1 = models.ImageField(verbose_name='Image 1' ,upload_to='slides/', blank= True, null=True)
+    text_1 = HTMLField(verbose_name='text 1', blank= True, null=True)
+    image_2 = models.ImageField(verbose_name='Image' ,upload_to='slides/', blank= True, null=True)
+    text_2 = HTMLField(verbose_name='text 2', blank= True, null=True)
+    image_3 = models.ImageField(verbose_name='Image' ,upload_to='slides/', blank= True, null=True)
+    text_3 = HTMLField(verbose_name='text 3', blank= True, null=True)
     created_date = models.DateTimeField(default=timezone.now)
 
 

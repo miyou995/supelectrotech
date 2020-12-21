@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <!-- bradcam_area  -->
+  <div class="bradcam_area breadcam_bg_4">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-12">
+                  <div class="bradcam_text text-center">
+                      <h3>Single Blog</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--/ bradcam_area  -->
+
+   <!--================Blog Area =================-->
+   <section class="blog_area single-post-area section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="{{post.image_1.url}}" alt="">
+                  </div>
+                  <div class="blog_details">
+                     <h2>{{post.titre}}
+                     </h2>
+                     <ul class="blog-info-link mt-3 mb-4">
+                        <li><a href="#"><i class="fa fa-user"></i> {{post.tag}}</a></li>
+                     </ul>
+                     <p class="excert">
+                       {{post.intro}}
+                     </p>
+                     <p>
+                       {{post.text_1}}
+                     </p>
+                     {% if post.image_2 %}
+                       
+                     <div class="feature-img">
+                        <img class="img-fluid" src="{{post.image_2.url}}" alt="">
+                     </div>
+                     {% endif %}
+                     {% if post.text_2 %}
+                       
+                     <p>
+                        {{post.text_2}}
+                     </p>
+                     {% endif %}
+                     {% if post.image_3 %}
+                       
+                     <div class="feature-img">
+                        <img class="img-fluid" src="{{post.image_3.url}}" alt="">
+                     </div>
+                     {% endif %}
+                     {% if post.text_3 %}
+                       
+                     <p>
+                        {{post.text_3}}
+                     </p>
+                     {% endif %}
+
+
+                  </div>
+               </div>
+
+            </div>
+            <div class="col-lg-4">
+               <div class="blog_right_sidebar">
+
+                  <aside class="single_sidebar_widget popular_post_widget">
+                     <h3 class="widget_title">Tous nos articles</h3>
+                     {% for post in postes %}
+                        <div class="media post_item">
+                           <div class="media-body">
+                              <a href="{% url 'post-detail' slug=post.slug %}">
+                                 <h3>{{post.titre}}</h3>
+                              </a>
+                              <p>{{post.created_date}}</p>
+                           </div>
+                        </div>
+                     {% endfor %}
+                 </aside>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--================ Blog Area end =================-->
+
+   {% block script %}
+     
+   <script>
+      $('#datepicker').datepicker({
+          iconsLibrary: 'fontawesome',
+          icons: {
+           rightIcon: '<span class="fa fa-caret-down"></span>'
+       }
+      });
+      $('#datepicker2').datepicker({
+          iconsLibrary: 'fontawesome',
+          icons: {
+           rightIcon: '<span class="fa fa-caret-down"></span>'
+       }
+
+      });
+  </script>
+   {% endblock script %}
+
+   {% endblock content %}

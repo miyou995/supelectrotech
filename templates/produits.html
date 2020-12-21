@@ -44,7 +44,7 @@
                             <div class="sidebar-title">
                                 <h2 class="text-uppercase">Téléchargement</h2>
                             </div>
-                            <a href="{% static 'catalogue/Teknim_fire.pdf' %}" download>
+                            <a href="{% static 'catalogue/Teknim_Intruder.pdf' %}" download>
                                 <li id="id_price" class=" d-flex justify-content-between ">
                                   <div class="mt-1">
                                     <h6 style="color: #233774;">Catalogue Détection Intrusion</h6>
@@ -55,7 +55,7 @@
                                 </li>
                               </a>
                               <hr>
-                              <a  href="{% static 'catalogue/Teknim_Intruder.pdf' %}" download>
+                              <a  href="{% static 'catalogue/Teknim_fire.pdf' %}" download>
                                 <li id="id_price" class=" d-flex justify-content-between ">
                                   <div class="mt-1">
                                     <h6 style="color: #233774;">Catalogue Détection Incendie</h6>
@@ -92,6 +92,11 @@
                                             </a>
                                             <div class="card-body">
                                                 <h6 class="card-subtitle mb-2 text-muted"> {{prod.reference}}</h6>
+                                                {% if prod.marque %}
+                                                    <h6 class="card-subtitle mb-2 text-danger"> {{prod.marque}}</h6>
+                                                    {% else %}
+                                                    <h6 class="card-subtitle mb-2 text-danger">Teknim</h6>
+                                                {% endif %}
                                                 <h4 class="card-title"> <a href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a></h4>
                                                 <!-- <div class="buy d-flex justify-content-between align-items-center">
                                                     <a href="{% url 'produit-detail' slug=prod.slug %}"
@@ -121,6 +126,11 @@
                                             </a>
                                             <div class="card-body">
                                                 <h6 class="card-subtitle mb-2 text-muted">{{prod.reference}}</h6>
+                                                {% if prod.marque %}
+                                                    <h6 class="card-subtitle mb-2 text-danger"> {{prod.marque}}</h6>
+                                                    {% else %}
+                                                    <h6 class="card-subtitle mb-2 text-danger">Teknim</h6>
+                                                {% endif %}
                                                 <h4 class="card-title"> <a
                                                         href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
                                                 </h4>
@@ -152,6 +162,11 @@
                                             </a>
                                             <div class="card-body">
                                                 <h6 class="card-subtitle mb-2 text-muted">{{prod.reference}}</h6>
+                                                {% if prod.marque %}
+                                                    <h6 class="card-subtitle mb-2 text-danger"> {{prod.marque}}</h6>
+                                                    {% else %}
+                                                    <h6 class="card-subtitle mb-2 text-danger">Teknim</h6>
+                                                {% endif %}
                                                 <h4 class="card-title"> <a
                                                         href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
                                                 </h4>
