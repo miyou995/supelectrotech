@@ -182,7 +182,87 @@
                         </div>
                     </div>
                 </div>
+
                 <!-- FIN partie Adressable -->
+                <!--  partie categorieX -->
+                {% if categorieX %}
+                  
+                <div id="adressable">
+                    <div class="py-5">
+                        <div class="row d-flex">
+                            <h2 class="font-weight-bold  my-5 col-12">categorieX</h2>
+                            {% for prod in categorieX %}
+                                {% if prod.is_active %}                              
+                                    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="{% url 'produit-detail' slug=prod.slug %}">
+                                                <img class="card-img" src="{{prod.photo.url}}" alt="{{prod.designation}}">
+                                            </a>
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">{{prod.reference}}</h6>
+                                                {% if prod.marque %}
+                                                    <h6 class="card-subtitle mb-2 text-danger"> {{prod.marque}}</h6>
+                                                    {% else %}
+                                                    <h6 class="card-subtitle mb-2 text-danger">Teknim</h6>
+                                                {% endif %}
+                                                <h4 class="card-title"> <a
+                                                        href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
+                                                </h4>
+                                                <!-- <div class="buy d-flex justify-content-between align-items-center">
+                                                    <a href="{% url 'produit-detail' slug=prod.slug %}"
+                                                        class="btn btn-primary mt-3">Lire Plus</a>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% if categorieY %}
+                  
+                <div id="adressable">
+                    <div class="py-5">
+                        <div class="row d-flex">
+                            <h2 class="font-weight-bold  my-5 col-12">categorieY</h2>
+                            {% for prod in categorieY %}
+                                {% if prod.is_active %}                              
+                                    <div class="col-12 col-sm-8 col-md-6 col-lg-4 mb-4">
+                                        <div class="card" style="height: 100%;">
+                                            <a href="{% url 'produit-detail' slug=prod.slug %}">
+                                                <img class="card-img" src="{{prod.photo.url}}" alt="{{prod.designation}}">
+                                            </a>
+                                            <div class="card-body">
+                                                <h6 class="card-subtitle mb-2 text-muted">{{prod.reference}}</h6>
+                                                {% if prod.marque %}
+                                                    <h6 class="card-subtitle mb-2 text-danger"> {{prod.marque}}</h6>
+                                                    {% else %}
+                                                    <h6 class="card-subtitle mb-2 text-danger">Teknim</h6>
+                                                {% endif %}
+                                                <h4 class="card-title"> <a
+                                                        href="{% url 'produit-detail' slug=prod.slug %}">{{prod.designation}}</a>
+                                                </h4>
+                                                <!-- <div class="buy d-flex justify-content-between align-items-center">
+                                                    <a href="{% url 'produit-detail' slug=prod.slug %}"
+                                                        class="btn btn-primary mt-3">Lire Plus</a>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+
+
+
+
+
 
             </div>
         </div>

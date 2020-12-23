@@ -11,6 +11,8 @@ CATEGORY_CHOICES=[
     ('IN', 'Intrusion'),
     ('IC', 'Incendie Conventionnelle'),
     ('IA', 'Incendie Adressable'),
+    ('C4', 'Categorie X'),
+    ('C5', 'Categorie Y'),
     ]
 class Marque(models.Model):
     name = models.CharField(max_length=100, verbose_name=("Nom de la marque"), blank=True, null=True)

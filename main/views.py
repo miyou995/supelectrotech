@@ -115,6 +115,8 @@ class BlogView(ListView):
         context["intrusion"] = Produit.objects.filter(category= 'IN')
         context["conventionnelle"] = Produit.objects.filter(category= 'IC')
         context["adressable"] = Produit.objects.filter(category= 'IA')
+        context["categorieX"] = Produit.objects.filter(category= 'C4')
+        context["categorieY"] = Produit.objects.filter(category= 'C5')
         context['tags']= Tag.objects.all()
         context['postes']= Post.objects.all()
         return context
