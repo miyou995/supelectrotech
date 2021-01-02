@@ -1,0 +1,29 @@
+<form id="test-form" action="#" method="POST" class="white-popup-block mfp-hide">
+    {% csrf_token %}
+    <div class="popup_box ">
+        <div class="popup_inner">
+            <div class="popup_header">
+                <h3>Demandez un devis</h3>
+            </div>
+            <div class="custom_form">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <input type="text" name="name" placeholder="Nom">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" name="phone" placeholder="Téléphone">
+                        </div>
+                        <div class="col-xl-12">
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed-btn3">Envoyer</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</form>
