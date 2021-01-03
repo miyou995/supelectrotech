@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% static "img" as baseUrl %}
+{%  block title %}
+PMATEL | page d'erreur
+{% endblock title %} 
+{% block content %}
+
+    <!-- bradcam_area  -->
+    <div class="bradcam_area bradcam_bg_1">
+      <div class="container">
+          <div class="row">
+              <div class="col-xl-12">
+                  <div class="bradcam_text text-center">
+                      <!-- <h3>SUPELECTROTECH</h3> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--/ bradcam_area  -->
+<div class="container jumbotron bg-dark mt-4">
+    <h1 class="display-4 text-danger">Votre Message à bine été envoyer </h1>
+    <p class="lead text-white">Nous vous recontacterons dés que possible</p>
+    <hr class="my-4">
+    <p class="lead">
+      <a class="btn btn-light btn-lg" href="{% url 'index' %}" role="button">Page d'acceuil</a>
+    </p>
+  </div>
+{% endblock content %}

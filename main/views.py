@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView
 from django.views.generic.edit import FormView
 from django.core.mail import send_mail, EmailMessage
@@ -52,27 +52,18 @@ class SolutionView(TemplateView):
         return context
     
 
-###########################################################################################
+
 @method_decorator(csrf_exempt, name='dispatch')
 class ContactView(FormView):
     template_name = 'contact.html'
     form_class = ContactForm
     success_url = "/"
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["cat"] = CATEGORY_CHOICES 
-    #     return context   
-    # def get(request):
-    #     context = RequestContext(request)
-    #     context_dict = {}
-    #     # Update the dictionary with csrf_token 
-    #     conext_dict.update(csrf(request))
-    #     return render_to_response("your_template.html", context_dict, context)
     def post(self, request, *args, **kwargs):
-        form = self.form_class(request.POST, request.FILES)
+        form = self.form_class(request.POST)
     
         if form.is_valid():
+            print('the form is valid')
             name = form.cleaned_data.get('name')
             email = form.cleaned_data.get('email')
             phone = form.cleaned_data.get('phone')
@@ -80,42 +71,22 @@ class ContactView(FormView):
             message = form.cleaned_data.get('message')
             honeypot = form.cleaned_data['honeypot']
 
-            # if form.cleaned_data.get('file'):
-            #     file = request.FILES['file']
-
             body = 'Nom: {} \n email: {} \n Phone:{} \n Sujet: {} \n Message: {}' .format(name, email, phone, subject, message)
             mail = EmailMessage('Cet email est envoyer depuis le site internet', body, 'inter.taki@gmail.com', ['inter-95@hotmail.fr']) 
             mail.send()
             messages.success(request, 'Votre message a bien été envoyer')
-        return redirect('/contact')
+
+        return render(request, 'contact.html', {'form': form})
+
 
 def error404(request, exception):
     return render(request, '404.html', status=404)
 
 
-# def devisForm(request):
-#     if request.method == 'GET':
-#         form = DevisForm()
-#     else:
-#         form = DevisForm(request.POST)
-#         if form.is_valid():
-#             name = form.cleaned_data['name']
-#             email = form.cleaned_data['email']
-#             phone = form.cleaned_data['phone']
-#             message = form.cleaned_data['message']
-#             try:
-#                 send_mail(name, email, phone, message,  ['inter.taki@gmail.com'])
-#             except BadHeaderError:
-#                 return HttpResponse('Invalid header found.')
-#             return redirect('success')
-#     return render(request, "base.html", {'form': form})
-
-
-
 @method_decorator(csrf_exempt, name='dispatch')
 class DeviFormView(FormView):
-    template_name = 'contact.html'
-    form_class = ContactForm
+    template_name = 'base.html'
+    form_class = DevisForm
     success_url = "/"
 
     def post(self, request, *args, **kwargs):
@@ -133,8 +104,8 @@ class DeviFormView(FormView):
             mail.send()
             messages.success(request, 'Votre message a bien été envoyer')
             
-            return redirect('/contact')
-        return render(request, 'base.html', {'form': form})
+            # return redirect('/contact')
+        return render(request, 'success.html', {'form': form})
 
 
 
@@ -195,3 +166,5 @@ class PostDetailView(DetailView):
         context["adressable"] = Produit.objects.filter(category= 'IA')
         context['postes']= Post.objects.all()
         return context
+
+

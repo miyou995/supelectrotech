@@ -9,7 +9,7 @@ urlpatterns = [
     path('produits/', ProductView.as_view(), name= 'produits'),
     path('contact/', ContactView.as_view(), name= 'contact'),
     path('detail/', PostDetailView.as_view(), name= 'detaail'),
-    path('devis-form/', DeviFormView.as_view(), name= 'devis-form'),
+    path('envoyer/', DeviFormView.as_view(), name= 'devis-form'),
     path('produits/<slug:slug>/', ProductDetailView.as_view(), name= 'produit-detail'),
     path('articles/<slug:slug>/', PostDetailView.as_view(), name= 'post-detail'),
 ]
