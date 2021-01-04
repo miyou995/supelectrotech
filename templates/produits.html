@@ -14,30 +14,22 @@
     </div>
 </div>
 <!--/ bradcam_area  -->
-<section class="container">
+<section class="container" data-spy="scroll" data-target="#navigation" data-offset="0">
     <!-- sidebar -->
     <div class="row d-flex justify-content-around">
         <div class="d-none d-md-block col-md-3">
             <aside class="side-bar-product d-block sidebar">
                 <div class="make-me-sticky">
-                    <div class="sidebar-widget search-box">
-                        <form method="post" action="#">
-                            <div class="form-group">
-                                <input type="search" name="search-field" value="" placeholder="Rechrcher un produit"
-                                    required>
-                                <button type="submit"><span class="icon fa fa-search"></span></button>
-                            </div>
-                        </form>
-                    </div>
+
                     <div class="sidebar-widget sidebar-blog-category">
                         <div class="sidebar-title">
                             <h2 class="text-uppercase">Catégories</h2>
                         </div>
                         <div>
-                            <ul class="cat-list">
-                                <li><a class="link-prod" href="#intrusion">Détection Intrusion</a></li>
-                                <li><a class="link-prod" href="#conventionnelle">Détection Incendie Conventionnelle</a></li>
-                                <li><a class="link-prod" href="#adressable">Détection Incendie Adressable</a></li>
+                            <ul class="cat-list" id="navigation">
+                                <li><a class="link-prod " href="#intrusion">Détection Intrusion</a></li>
+                                <li><a class="link-prod " href="#conventionnelle">Détection Incendie Conventionnelle</a></li>
+                                <li><a class="link-prod " href="#adressable">Détection Incendie Adressable</a></li>
                             </ul>
                         </div>
                         <div class="download mt-5">
@@ -76,9 +68,11 @@
 
         <!-- <div class="row"> -->
 
-        <div class="col- col-md-9  ">
-            <div class="main-product">
+        <div class="col- col-md-9"  >
+            <div  class="main-product">
                 <!-- partie intrusion -->
+                {% if intrusion %}
+
                 <div id="intrusion">
                     <div class="py-5">
                         <div class="row d-flex">
@@ -110,9 +104,11 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
+
                 <!-- FIN partie intrusion -->
                 <!--  partie Conventionnelle -->
-
+                {% if conventionnelle %}
                 <div id="conventionnelle">
                     <div class="py-5">
                         <div class="row d-flex">
@@ -146,9 +142,11 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
+
                 <!-- FIN partie Conventionnelle -->
                 <!--  partie Adressable -->
-
+                {% if adressable %}
                 <div id="adressable">
                     <div class="py-5">
                         <div class="row d-flex">
@@ -182,6 +180,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
 
                 <!-- FIN partie Adressable -->
                 <!--  partie categorieX -->

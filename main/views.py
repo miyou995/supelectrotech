@@ -34,13 +34,13 @@ class AboutView(TemplateView):
 
 
 
-class CatalogueListView(TemplateView):
-    template_name = "produits.html"
+# class CatalogueListView(TemplateView):
+#     template_name = "produits.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context["cat"] = CATEGORY_CHOICES 
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context["cat"] = CATEGORY_CHOICES 
+#         return context
 
 
 class SolutionView(TemplateView):
@@ -122,15 +122,17 @@ class ProductDetailView(DetailView):
 class ProductView(TemplateView):
     template_name = "produits.html"
 
-    def get_queryset(self):
-        return super().get_queryset()
-    
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cat"] = CATEGORY_CHOICES 
         context["intrusion"] = Produit.objects.filter(category= 'IN')
+        context["intrusion"] = Produit.objects.filter(category= 'IN')
+        print('balaaaaaaa',context["intrusion"].all())
         context["conventionnelle"] = Produit.objects.filter(category= 'IC')
+        context["conventionnelle"] = Produit.objects.filter(category= 'IC')
+        context["adressable"] = Produit.objects.filter(category= 'IA')
         context["adressable"] = Produit.objects.filter(category= 'IA')
         
         return context

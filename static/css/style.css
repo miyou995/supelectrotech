@@ -7033,7 +7033,7 @@ h6 {
 .make-me-sticky {
   position: -webkit-sticky;
 	position: sticky;
-	top: 0;
+	top: 100px;
     
 }
 
@@ -7142,12 +7142,17 @@ h6 {
 }
 
 .cat-list li a:hover{
-	color:#233774;
+  color: #011552;
+  font-weight: bold;
 }
-.main-product h2 {
-  
+.cat-list li a:active{
+  color: #011552;
+  font-weight: bold;
 }
-
+#naigation a.active {
+  color: #011552;
+  font-weight: bold;
+}
 
 
 /* line 20, ../../Arafath/CL/Cl November/223. Transportation/HTML/scss/_accordion_area.scss */
