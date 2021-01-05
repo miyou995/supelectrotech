@@ -167,7 +167,6 @@ INTERNAL_IPS = ['127.0.0.1', '::1', '0.0.0.0']
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
     messages.SUCCESS: 'primary'
-
 }
 # if DEBUG:
 #     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -185,3 +184,8 @@ EMAIL_USE_SSL = False
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATIC_URL = '/static/'
+# MEDIA_URL = '/media/'
+# STATICFILES_DIRS=[BASE_DIR, "static"]
+# STATIC_ROOT = '/home2/supelect/public_html/assets'
+# MEDIA_ROOT  = '/home2/supelect/public_html/media'
