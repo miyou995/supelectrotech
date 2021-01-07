@@ -15,8 +15,8 @@
 </div>
 <!--/ bradcam_area  -->
 <!--Main layout-->
-<main class="mt-5 pt-4 " style="height: 800px!important;">
-  <div class="container wow fadeIn">
+<main class="mt-5 pt-4 " >
+  <div class="container wow fadeIn"style="height: 600px!important;display: table;">
 
     <!-- Heading -->
     <!--Grid row-->
@@ -32,10 +32,11 @@
               </div>
               <ul class="cat-list" id="side-nav" >
                 <li><a class="link-prod" href="{% url 'produits' %}#intrusion">Détection Intrusion</a></li>
-                <li><a class="link-prod" href="{% url 'produits' %}#conventionnelle">Détection Incendie
-                    Conventionnelle</a>
-                </li>
+                <li><a class="link-prod" href="{% url 'produits' %}#conventionnelle">Détection Incendie Conventionnelle</a></li>
                 <li><a class="link-prod" href="{% url 'produits' %}#adressable">Détection Incendie Adressable</a></li>
+                {% if categorieX %}
+                <li><a class="link-prod" href="{% url 'produits' %}#adressable">Cable</a></li>
+                {% endif %}
               </ul>
             </div>
             <div class="download mt-5">

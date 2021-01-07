@@ -30,6 +30,9 @@
                                 <li><a class="link-prod " href="#intrusion">Détection Intrusion</a></li>
                                 <li><a class="link-prod " href="#conventionnelle">Détection Incendie Conventionnelle</a></li>
                                 <li><a class="link-prod " href="#adressable">Détection Incendie Adressable</a></li>
+                                {% if categorieX %}
+                                <li><a class="link-prod" href="{% url 'produits' %}#adressable">Cable</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="download mt-5">

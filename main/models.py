@@ -11,7 +11,7 @@ CATEGORY_CHOICES=[
     ('IN', 'Intrusion'),
     ('IC', 'Incendie Conventionnelle'),
     ('IA', 'Incendie Adressable'),
-    ('C4', 'Categorie X'),
+    ('C4', 'Cables'),
     ('C5', 'Categorie Y'),
     ]
 class Marque(models.Model):

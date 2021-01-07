@@ -72,7 +72,7 @@ class ContactView(FormView):
             honeypot = form.cleaned_data['honeypot']
 
             body = 'Nom: {} \n email: {} \n Phone:{} \n Sujet: {} \n Message: {}' .format(name, email, phone, subject, message)
-            mail = EmailMessage('Cet email est envoyer depuis le site internet', body, 'inter.taki@gmail.com', ['inter-95@hotmail.fr']) 
+            mail = EmailMessage('Cet email est envoyer depuis le site internet', body, 'webmaster@supelectrotech.com', ['technique @supelectrotech.com']) 
             mail.send()
             messages.success(request, 'Votre message a bien été envoyer')
 
@@ -100,7 +100,7 @@ class DeviFormView(FormView):
             message = form.cleaned_data.get('message')
             # honeypot = form.cleaned_data['honeypot']
             body = 'Nom: {} \n email: {} \n Phone:{} \n Message: {}' .format(name, email, phone, message)
-            mail = EmailMessage('Cet email est envoyer depuis le site internet', body, 'inter.taki@gmail.com', ['inter-95@hotmail.fr']) 
+            mail = EmailMessage('Cet email est envoyer depuis le site internet supelectrotech.com pour demande de devis', body, 'webmaster@supelectrotech.com', ['commercial@supelectrotech.com']) 
             mail.send()
             messages.success(request, 'Votre message a bien été envoyer')
             
@@ -117,6 +117,8 @@ class ProductDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cat"] = CATEGORY_CHOICES 
+        context["categorieX"] = Produit.objects.filter(category= 'C4')
+        context["categorieY"] = Produit.objects.filter(category= 'C5')
         return context
 
 class ProductView(TemplateView):
@@ -129,12 +131,12 @@ class ProductView(TemplateView):
         context["cat"] = CATEGORY_CHOICES 
         context["intrusion"] = Produit.objects.filter(category= 'IN')
         context["intrusion"] = Produit.objects.filter(category= 'IN')
-        print('balaaaaaaa',context["intrusion"].all())
         context["conventionnelle"] = Produit.objects.filter(category= 'IC')
         context["conventionnelle"] = Produit.objects.filter(category= 'IC')
         context["adressable"] = Produit.objects.filter(category= 'IA')
         context["adressable"] = Produit.objects.filter(category= 'IA')
-        
+        context["categorieX"] = Produit.objects.filter(category= 'C4')
+        context["categorieY"] = Produit.objects.filter(category= 'C5')
         return context
     
 

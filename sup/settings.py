@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pjr6kq2zn&y&g-i-7q!g5n)^yz$*d124i8+55-4*d5ej7p=-9*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -172,15 +172,15 @@ MESSAGE_TAGS = {
 #     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # else:
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-SERVER_EMAIL = 'inter.taki@gmail.com'
-EMAIL_HOST_USER = 'inter.taki@gmail.com'
+EMAIL_HOST = 'mail.supelectrotech.com'
+EMAIL_PORT = 465
+SERVER_EMAIL = 'webmaster@supelectrotech.com'
+EMAIL_HOST_USER = 'webmaster@supelectrotech.com'
 
-EMAIL_HOST_PASSWORD = 'qkfjvblctlqrpucl'
+EMAIL_HOST_PASSWORD = 'miyou0209'
 
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
 
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
