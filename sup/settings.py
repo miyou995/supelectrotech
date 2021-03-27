@@ -183,8 +183,8 @@ EMAIL_USE_TLS = False
 EMAIL_USE_SSL = True
 
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STATIC_URL = '/static/'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # MEDIA_URL = '/media/'
 # STATICFILES_DIRS=[BASE_DIR, "static"]
 # STATIC_ROOT = '/home2/supelect/public_html/assets'

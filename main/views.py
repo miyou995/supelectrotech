@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.http import HttpResponseRedirect
 from .forms import DevisForm, ContactForm
-from .models import  CATEGORY_CHOICES, Produit, Slide, Post, Tag, Post
+from .models import  CATEGORY_CHOICES, Produit, Slide, Post, Tag, Post, Catalogue
 # Create your views here.
 import random
 
@@ -26,7 +26,6 @@ class AboutView(TemplateView):
     template_name = "about.html"
 
     def get_context_data(self, **kwargs):
-
         context = super().get_context_data(**kwargs)
         context["cat"] = CATEGORY_CHOICES 
         return context
@@ -63,7 +62,6 @@ class ContactView(FormView):
         form = self.form_class(request.POST)
     
         if form.is_valid():
-            print('the form is valid')
             name = form.cleaned_data.get('name')
             email = form.cleaned_data.get('email')
             phone = form.cleaned_data.get('phone')
@@ -119,13 +117,12 @@ class ProductDetailView(DetailView):
         context["cat"] = CATEGORY_CHOICES 
         context["categorieX"] = Produit.objects.filter(category= 'C4')
         context["categorieY"] = Produit.objects.filter(category= 'C5')
+        context["catalogues"] = Catalogue.objects.all()
+
         return context
 
 class ProductView(TemplateView):
     template_name = "produits.html"
-
-
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["cat"] = CATEGORY_CHOICES 
@@ -137,6 +134,7 @@ class ProductView(TemplateView):
         context["adressable"] = Produit.objects.filter(category= 'IA')
         context["categorieX"] = Produit.objects.filter(category= 'C4')
         context["categorieY"] = Produit.objects.filter(category= 'C5')
+        context["catalogues"] = Catalogue.objects.all()
         return context
     
 

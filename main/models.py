@@ -107,5 +107,9 @@ class Post(models.Model):
     def __str__(self):
         return self.titre
 
+class Catalogue(models.Model):
+    nom     = models.CharField(max_length=150)
+    fichier = models.FileField(upload_to='catalogues', max_length=180)
 
-
+    def __str__(self):
+        return self.nom
