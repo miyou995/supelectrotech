@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pjr6kq2zn&y&g-i-7q!g5n)^yz$*d124i8+55-4*d5ej7p=-9*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.supelectrotech.com', 'supelectrotech.com']
 
 
 # Application definition
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
-    
+
     'django.middleware.security.SecurityMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -136,11 +136,11 @@ CKEDITOR_CONFIGS = {
     'default':
         {
             'skin': 'moono',
-            'toolbar': 'full', 
+            'toolbar': 'full',
             "removePlugins": "stylesheetparser",
             'toolbar_Custom': [
-                ['Bold', 'Link', 'Unlink', 'Image'], 
-            ], 
+                ['Bold', 'Link', 'Unlink', 'Image'],
+            ],
             'extraPlugins': ','.join(['codesnippet']),
 }}
 

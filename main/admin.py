@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Produit, Marque, Post, Tag
+from .models import Produit, Marque, Post, Tag, Catalogue
 
 admin.autodiscover()
 admin.site.enable_nav_sidebar = False
@@ -34,6 +34,9 @@ class Admin(admin.ModelAdmin):
     list_display = ('id', 'tag')
 
 
+@admin.register(Catalogue)
+class CatalogueAdmin(admin.ModelAdmin):
+    list_display = ('id', 'nom')
 
 
 # admin.site.register(Slide, CategoryAdmin)
