@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pjr6kq2zn&y&g-i-7q!g5n)^yz$*d124i8+55-4*d5ej7p=-9*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.supelectrotech.com', 'supelectrotech.com']
+ALLOWED_HOSTS = ['www.supelectrotech.com', 'supelectrotech.com', "*"]
 
 
 # Application definition
@@ -187,5 +187,11 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # MEDIA_URL = '/media/'
 # STATICFILES_DIRS=[BASE_DIR, "static"]
+
 # STATIC_ROOT = '/home2/supelect/public_html/assets'
 # MEDIA_ROOT  = '/home2/supelect/public_html/media'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+try:
+    from .local_settings import *
+except ImportError:
+    pass

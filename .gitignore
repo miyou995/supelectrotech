@@ -1,1 +1,6 @@
 venv/
+media/*
+media/
+*.pyc
+assets/*
+assets/
